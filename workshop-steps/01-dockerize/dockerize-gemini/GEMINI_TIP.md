@@ -1,3 +1,48 @@
+I've asked gemini how to dockerize an app and thought of injecting the `config.php` part so it'd know
+if uses `mysql` and already knows user/pass/db in case he wants to give me more.
+
+Which in fact, he does!
+
+## Gemini question
+
+I need to dockerize my customer's PHP all. its a very simple app, can't infer the PHP version. The config file is this for the DB. Can you help me set up a Dockerfile?
+
+```
+<?php
+
+// Configurazione del database
+
+$db_host = 'localhost';
+
+$db_name = 'image_catalog';
+
+$db_user = 'root';
+
+$db_pass = 'veryverystrongpassword';
+
+
+
+try {
+
+    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch (PDOException $e) {
+
+    die("Errore di connessione: " . $e->getMessage());
+
+}
+
+
+
+session_start();
+
+?>
+```
+
+## Gemini Answer
+
 It's great that you're dockerizing your customer's PHP application! Here's a Dockerfile that should work for a basic setup, along with explanations to help you understand and customize it:
 
 ```dockerfile
