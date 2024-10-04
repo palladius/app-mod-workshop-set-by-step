@@ -16,8 +16,7 @@ https://github.com/docker/docker-php-sample
 
 Makes sense.
 
-* Sample PHP `Dockerfile`:  https://github.com/docker/docker-php-sample
-* nope non va
+* Docker for PHP on GCP: https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service
 
 
 ## How do you do it?
@@ -41,3 +40,8 @@ Errore di connessione: could not find driver
 ```
 
 If you got here, it's a **SUCCESS**! On to the next chapter.
+
+
+## URLography
+
+* https://cloud.google.com/run/docs/quickstarts/build-and-deploy/deploy-php-service
