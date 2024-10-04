@@ -18,3 +18,26 @@ Makes sense.
 
 * Sample PHP `Dockerfile`:  https://github.com/docker/docker-php-sample
 * nope non va
+
+
+## How do you do it?
+
+* I've asked Gemini this question:
+
+```
+Errore di connessione: could not find driver
+```
+* Result: see `dockerize-gemini/`
+* I just needed to change `COPY .` into `COPY app/` and it worked at first time!
+* Yup, it's THAT simple!
+
+
+## does it work?
+
+Since we haven't configured the DB Yet, we get this error:
+
+```
+Errore di connessione: could not find driver
+```
+
+If you got here, it's a **SUCCESS**! On to the next chapter.

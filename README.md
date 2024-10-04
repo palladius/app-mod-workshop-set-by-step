@@ -1,4 +1,6 @@
 
+Self: https://github.com/palladius/app-mod-workshop-set-by-step
+
 This contains solutions (spoiler alert!) for the AppMod workshop invented by Riccardo and inspired by a failed
 talk on AppMod: "scrap your old app to the Cloud" (*rottama la tua vecchia app verso il Cloud*).
 
