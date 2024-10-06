@@ -8,7 +8,7 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 
 ## folder
 
-* `app/` Contains a `curated` copy of the [docker-php-sample](https://github.com/docker/docker-php-sample) app (since i have no control of the original code).
+* `app/` Contains a `curated` copy of the [🧑🏻‍💻 gdgpescara/app-mod-workshop](https://github.com/gdgpescara/app-mod-workshop) app (since i have no control of the original code).
     * Current commit: `35e71a981a53299319da1ff209be2b4e7b3e20c6` from Tue Oct 1 2024
 
 ## Prerequisites
