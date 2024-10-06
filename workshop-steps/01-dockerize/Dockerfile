@@ -12,4 +12,5 @@ RUN a2enmod rewrite
 RUN service apache2 restart
 WORKDIR /etc/apache2/sites-available/
 RUN a2ensite blogsite.com.conf
-EXPOSE 80
+
+EXPOSE 8080

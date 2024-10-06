@@ -16,3 +16,4 @@ git clone git@github.com:YOUR_GITHUB_USER/app-mod-workshop.git
 gh repo clone YOUR_GITHUB_USER/app-mod-workshop
 ```
 1. Edit it with your fav IDE, eg: `code app-mod-workshop/`
+2. Copy the `.env.dist` into `.env`.

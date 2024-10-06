@@ -49,6 +49,9 @@ Fair question! Years ago you would have surely chosen Google App Engine.
 
 Simply put, today Cloud run has a newer tech stack, it's easier to deploy, cheaper, and scales to 0.
 
+## Did you notice?
+
+* Cloud run created for you an Artifact Registry repository for you. this is where its storing all your docker/packer code artefacts.
 
 ## Tips
 
