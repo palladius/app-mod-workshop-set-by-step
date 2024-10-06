@@ -16,13 +16,14 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 * A computer with a browser.
 * Some GCP credits. Ask your local Google aficionado for some ;)
 * `gcloud` working.
-    * Are you wotrking **local**? download it [here](https://cloud.google.com/sdk/docs/install). You will also need some nice editor (eg `vscode` or ).
+    * Are you working **local**? download it [here](https://cloud.google.com/sdk/docs/install). You will also need some nice editor (eg `vscode` or ).
     * Want to do everything "**in the Cloud**"? You can use [cloud Shell](https://cloud.google.com/shell/docs) then.
 * a Github user.
 
 **Nice to haves**:
 
 * Install [Cloud Code](https://cloud.google.com/code?hl=it) on your local `vscode` or `JetBrains` IDEs.
+* rename the repo with a better English name: NOT set-by-step but step-by-step.
 
 ## License
 
@@ -31,4 +32,4 @@ MIT just like original app.
 ## thanks
 
 * Gregorio Palama' for inspiration and PHP code.
-* Maurizio Ipsaleand Mirko Gilioli for having my workshop in GDG Modena.
+* Maurizio Ipsale and Mirko Gilioli for having my workshop in GDG Modena.
