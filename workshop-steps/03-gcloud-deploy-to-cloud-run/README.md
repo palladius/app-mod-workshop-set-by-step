@@ -7,10 +7,22 @@
 
 Now it's Time to deploy to Google cloud!
 
-Let's try to make it work in two steps
+Let's try to make it work in two steps.
 
 * Step 1: be interactive until it works.
 * Step 2: The second time you do it, you should be bored of interactions (unless you love clicking numerous times on Windows machines!).
+
+## gcloud auth login
+
+If you haven't installed `gcloud` yet, it's time to do it now! ([instructions](https://cloud.google.com/sdk/docs/install)).
+
+Now type:
+
+```bash
+$ gcloud auth login --update-adc
+```
+
+This should authenticate you through a OAuth login on your browser. Make sure that you login through a Chrome with the same user (eg `vattelapesca@gmail.com`) who is logged into Google Cloud with billing enabled.
 
 ## 1. gcloud run deploy (simple invocation)
 
@@ -42,6 +54,7 @@ So you want to craft the golden `gcloud run deploy --option1 blah --foo bar --re
 5. This `gcloud run deploy BLAH BLAH BLAH` rocks! Save it down somewhere, you'll need it later for Cloud Build step!
    Well done!
 
+You might want to feed this big long command in a bash script (example in this folder)
 
 ## Why cloud Run?
 
@@ -53,6 +66,7 @@ Simply put, today Cloud run has a newer tech stack, it's easier to deploy, cheap
 
 * Cloud run created for you an Artifact Registry repository for you. this is where its storing all your docker/packer code artefacts.
 
-## Tips
+## Tips/Possible Issues
 
-* gcloud Docs: https://cloud.google.com/sdk/gcloud/reference/run/deploy
+* [`gcloud run deploy` docs](https://cloud.google.com/sdk/gcloud/reference/run/deploy)
+* Add `ENV PORT 80` to `Dockerfile` or Cloud Run will look for port `8080` by default and will fail loading.
