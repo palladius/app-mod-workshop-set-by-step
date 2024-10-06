@@ -1,7 +1,14 @@
+Preparing an app for the cloud is all about extracting pieces of info from the app to the outside world,
+and this is normally done (as a first step) with `ENV` variables. this allows you to deploy similar versions
+of the same app to different endpoints, with slightly different configurations.
+
+Let's see4 this with some examples.
 
 ## Respect the Environment
 
-It all starts with `ENV`. ENV is the "**bridge**" between your deployed app and your system to provide those variables.
+It all starts with `ENV`.
+
+ENV is the "**bridge**" between your deployed app and your system to provide those variables.
 
 Example:
 
@@ -15,7 +22,6 @@ $db_user = 'nonL4Indovin3r4iM41';
 ```
 
 to:
-
 
 ```
 $db_host = getenv('DB_HOST');
@@ -32,10 +38,6 @@ $db_user = getenv('DB_PASS');
 
 Get inspired by local .env.dist and copy it locally.
 I made it so you can't easily add to git mistakenly.
-
-
-
-
 
 
 ## Even better

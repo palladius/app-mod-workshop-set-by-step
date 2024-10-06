@@ -18,6 +18,7 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 * `gcloud` working.
     * Are you wotrking **local**? download it [here](https://cloud.google.com/sdk/docs/install). You will also need some nice editor (eg `vscode` or ).
     * Want to do everything "**in the Cloud**"? You can use [cloud Shell](https://cloud.google.com/shell/docs) then.
+* a Github user.
 
 **Nice to haves**:
 

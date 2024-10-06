@@ -79,15 +79,16 @@ Now time to test it from your laptop!
 Test the DB connection, with localhost command:
 
 ```
-$ mysql -u USER -pPASSWORD -H HOST
+# Manual
+$ mysql -u USER -pPASSWORD DATABASE -h HOST
+# Assisted
+./check-mysql.sh
 ```
 
 If this doesn't work, check everything done so far!
 
 A **BUG** on my Mac: **ERROR 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded:** was solved
-by [this link](https://github.com/Homebrew/homebrew-core/issues/180498) and lazily backporting to MySQL 8.4. Not ideal,
-but it worked. Actually [This comment](https://github.com/Homebrew/homebrew-core/issues/180498#issuecomment-2296006936)
-worked.
+by [this link](https://github.com/Homebrew/homebrew-core/issues/180498) and lazily backporting to MySQL 8.4. Not ideal, but it worked. Actually [This comment](https://github.com/Homebrew/homebrew-core/issues/180498#issuecomment-2296006936) worked.
 
 ## Import the Database from codebase
 
@@ -105,13 +106,14 @@ Two ways to do it: the UI way (simple) and the CLI way (more control):
 
 ### CLI way
 
-TODO(ricc): explain it better.
-
 Something like this should do:
 
 ```bash
 cat db/01_schema.sql db/02_seed.sql | mysql -u USER -pPASSWORD DATABASE -h HOST # substitute vars appropriately
 ```
+
+*TODO(ricc): explain it better.*
+
 ## Notes on more secure connections
 
 You are currently using a public IP to connect to the Cloud SQL instanece, with additional security of a L3 firewall.
