@@ -39,7 +39,7 @@ Create User(s).
 * Click "Add user account".
 * User: lets create one:
     * Username: `appmod-phpapp-user`
-    * Password: Choose something STRONG, click GENERATE - eg `P$Aur)fsVf)skPFQ`
+    * Password: Choose something STRONG, click `GENERATE`.
     * Keep "Allow any host (%)".
 * click ADD.
 
@@ -52,7 +52,7 @@ Note all DBs in Cloud SQL are born 'isolated'. You need to explicitly set up a n
 * Click under `Authorised networks`. Now add a subnet. If you a
     * If you're lazy and want it to work INSECURELY but right now, do this:
         * Name: `Everyone in the world - INSECURE`
-        * Network: `0.0.0.0/32`
+        * Network: `0.0.0.0/0` (Note: this is **INSECURE**!)
     * If you want it to be more secure:
         * Find your IP address (eg on https://whatismyipaddress.com/ ), say `1.2.3.4`
         * Name: "Riccardo personal IP from Home" (or whichever descriptive label you want)
@@ -61,8 +61,7 @@ Note all DBs in Cloud SQL are born 'isolated'. You need to explicitly set up a n
 
 You should see something like this:
 
-![alt text](image.png)
-
+![alt text](image-1.png)
 
 ## Time to test DB connection!
 
