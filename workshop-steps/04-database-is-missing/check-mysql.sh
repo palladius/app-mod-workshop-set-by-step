@@ -13,6 +13,7 @@ echo Command:
 echo mysql -u "$DB_USER" "-p$DB_PASS" $DB_NAME -h "$DB_HOST"
 
 # todo set -x like echodo
-echodo mysql -u "$DB_USER" "-p$DB_PASS" $DB_NAME -h "$DB_HOST"
-yellow "mysql -u $DB_USER -p'$DB_PASS' $DB_NAME -h $DB_HOST"
-echo 'Show tables;' | mysql -u "$DB_USER" "-p$DB_PASS" -h "$DB_HOST"
+#echodo mysql -u "$DB_USER" "-p$DB_PASS" $DB_NAME -h "$DB_HOST"
+#yellow "mysql -u $DB_USER -p'$DB_PASS' $DB_NAME -h $DB_HOST"
+echo '🧩 1. Showing the tables in the DB:'
+echo 'Show tables;' | mysql -u "$DB_USER" "-p$DB_PASS" "$DB_NAME" -h "$DB_HOST"

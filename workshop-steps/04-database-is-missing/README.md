@@ -31,7 +31,7 @@ Create the DB.
 * Open your instance and Click on Databases tab:
 * You should be here: https://console.cloud.google.com/sql/instances/appmod-phpapp/databases
 * click "Create Database"
-* call it `modernized_image_catalog` (the original is `image_catalog`)
+* call it `image_catalog` (the original is `image_catalog`)
 
 Create User(s).
 
@@ -86,13 +86,32 @@ If this doesn't work, check everything done so far!
 
 A **BUG** on my Mac: **ERROR 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded:** was solved
 by [this link](https://github.com/Homebrew/homebrew-core/issues/180498) and lazily backporting to MySQL 8.4. Not ideal,
-but it worked. No actually, it kept using the 9.0.1. :/
+but it worked. Actually [This comment](https://github.com/Homebrew/homebrew-core/issues/180498#issuecomment-2296006936)
+worked.
 
 ## Import the Database from codebase
 
-TODO ricc
+Two ways to do it: the UI way (simple) and the CLI way (more control):
 
+### UI way
 
+1. Open https://console.cloud.google.com/sql/instances/appmod-phpapp/studio
+1. Put DB, user and password.
+1. Go your PHP app's code and copy the `db/01_schema.sql` here. Note the `CREATE DATABASE image_catalog;` will fail so you either comment it or change it to `CREATE DATABASE IF NOT EXISTS image_catalog;`
+1. Copy also the `db/02_seed.sql`.
+1. you should see two nice tables on the left now:
+
+![alt text](image-2.png)
+
+### CLI way
+
+TODO(ricc): explain it better.
+
+Something like this should do:
+
+```bash
+cat db/01_schema.sql db/02_seed.sql | mysql -u USER -pPASSWORD DATABASE -h HOST # substitute vars appropriately
+```
 ## Notes on more secure connections
 
 You are currently using a public IP to connect to the Cloud SQL instanece, with additional security of a L3 firewall.
