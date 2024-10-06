@@ -54,7 +54,7 @@ Note all DBs in Cloud SQL are born 'isolated'. You need to explicitly set up a n
         * Name: `Everyone in the world - INSECURE`
         * Network: `0.0.0.0/0` (Note: this is **INSECURE**!)
     * If you want it to be more secure:
-        * Find your IP address (eg on https://whatismyipaddress.com/ ), say `1.2.3.4`
+        * Find your IP address (eg on https://whatismyipaddress.com/ ), say `77.109.152.98` (my flat in Zurich)
         * Name: "Riccardo personal IP from Home" (or whichever descriptive label you want)
         * Network: `77.109.152.98/0`
 * Click **save**.
@@ -65,7 +65,17 @@ You should see something like this:
 
 ## Time to test DB connection!
 
-Note: this will only work if you created the instance, the DB, user, password and you opened the network.
+First test DB, User and PAssword from the Console.
+
+![alt text](image.png)
+
+1. Open the Studio tab from your Cloud SQL instance page: https://console.cloud.google.com/sql/instances/appmod-phpapp/studio
+1. Populate Database and User.
+1. Paste your password from `.env`.
+
+Now time to test it from your laptop!
+
+**Note**: this will only work if you created the instance, the DB, user, password and you opened the network.
 Test the DB connection, with localhost command:
 
 ```
@@ -73,6 +83,10 @@ $ mysql -u USER -pPASSWORD -H HOST
 ```
 
 If this doesn't work, check everything done so far!
+
+A **BUG** on my Mac: **ERROR 2059 (HY000): Authentication plugin 'mysql_native_password' cannot be loaded:** was solved
+by [this link](https://github.com/Homebrew/homebrew-core/issues/180498) and lazily backporting to MySQL 8.4. Not ideal,
+but it worked. No actually, it kept using the 9.0.1. :/
 
 ## Import the Database from codebase
 
@@ -86,3 +100,4 @@ You are currently using a public IP to connect to the Cloud SQL instanece, with 
 Is this the best way to do it? Is it the only way to do it? Probably no.
 
 There are many other options you might want to check out: https://cloud.google.com/sql/docs/mysql/connect-overview
+
