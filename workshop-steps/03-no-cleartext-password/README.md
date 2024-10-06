@@ -24,6 +24,20 @@ $db_user = getenv('DB_USER');
 $db_user = getenv('DB_PASS');
 ```
 
+
+## Let's get to work!
+
+
+**1. Create the `.env` file**
+
+Get inspired by local .env.dist and copy it locally.
+I made it so you can't easily add to git mistakenly.
+
+
+
+
+
+
 ## Even better
 
 What about using Secret Manager?
@@ -37,4 +51,3 @@ $db_name = getenv('DB_NAME'); // from ENV
 $db_user = getenv('DB_USER'); // from ENV
 $db_user = getenv('DB_PASS'); // Stored and linked to Secret Manager
 ```
-
