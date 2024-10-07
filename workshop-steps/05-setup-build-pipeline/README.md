@@ -24,5 +24,62 @@ This is an example of some builds for my `php-amarcord` app:
 
 ![Artifact Registry](image.png)
 
-how do we do all of this? By crafting one perfect YAML file: `cloudbuild.yaml`
+How do we do all of this?
+1. By crafting one perfect YAML file: `cloudbuild.yaml`
+1. By creating a Cloud Build trigger.
+1. By connecting to our github repo through the [Cloud Build UI](https://console.cloud.google.com/cloud-build/builds).
 
+
+### 1. Create trigger (and Connect Repository)
+
+* go to https://console.cloud.google.com/cloud-build/triggers
+* Click "Create Trigger".
+* Compile:
+     * **Name**: Something meaningful like `on-git-commit-build-php-app`
+     * Event: Push to branch
+     * Source: "Connect new repository"
+![alt text](image-1.png)
+     * This will open a window on the right: "Connect repository"
+         * **Source provider**: "Github" (first)
+         * "Continue"
+         * **Authenticate** will open a window on github to cross-authenticate. Follow the flow and be patient. If you have many repos it might take you a while.
+         * "Select repo" Select your account/repo and tick the "I understand..." part.
+![Repo name and I understand](image-2.png)
+         * Click Connect.
+         * Bingo! Your repo is now connected.
+     * Back to the Trigger part....
+     * Configuration: Autodetected (*)
+     * Advanced: leave everything as is.
+
+(*) This is the simplest way. Usually I do the `cloudbuild.yaml` part.
+
+## Testing the trigger
+
+Now to test the trigger, just commit a very simple change to the PHP repo.
+## Riccardo lets see what happens with autodetected...
+
+* Change your app code.
+* git commit -a -m 'little change to test Cloud Build'
+* git push
+* Make sure that this code made it to github..
+* Check on your Cloud Build under [history tab](https://console.cloud.google.com/cloud-build/builds):
+
+![alt text](image-3.png)
+
+* **Bingo**! It builds! On success, you see something building something under the name you gave to your trigger.
+
+Click on the build hash to find if the build was successful.
+
+If you click on the `Build Artifacts` you should see that we built a "big zip" and you also find a link on GCR for it (the little arrow on the right of Image):
+
+![alt text](image-5.png)
+
+This is really good, but we can do even better...
+
+## More control on cloudbuild.yaml
+
+Now we're able to trigger a build, but we want more control:
+
+* build the artifact
+* push a change to Cloud Run (dev)
+* [optional] If it all works, push the same change to Cloud Run (prod).
