@@ -18,7 +18,8 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 * `gcloud` working.
     * Are you working **local**? download it [here](https://cloud.google.com/sdk/docs/install). You will also need some nice editor (eg `vscode` or ).
     * Want to do everything "**in the Cloud**"? You can use [cloud Shell](https://cloud.google.com/shell/docs) then.
-* a Github user.
+* a **Github user**. You need this to branch the original code [🧑🏻‍💻 gdgpescara/app-mod-workshop](https://github.com/gdgpescara/app-mod-workshop) with your own git repo. This is needed to have your own CI/CD pipeline (one commit -> one build ~> one deploy)
+    * For instance: https://github.com/Friends-of-Ricc/app-mod-workshop
 
 **Nice to haves**:
 
