@@ -163,3 +163,21 @@ You might have noticed there's a missing piece here: we did NOT create the Docke
 * Go to TODO
 
 
+## Conclusions
+
+If you're lucky you'll get to a point where your red history becomes green:
+
+![alt text](image-3.png)
+
+Feels good, doesn't it!
+
+When you're done, you can now uncomment the "deploy to PROD" part. You'll have the SAME code deployed to prod *after*
+successfully being deployed to dev. This is a pretty simple yet meaningful `git commit` -> `dev` -> `prod` promotion,
+which ensures that the same code is deployed to two different endpoints which differ only in the ENV side.
+
+Some ideas:
+
+* what if you don't want to deploy to prod on Fridays or Weekends? how would you tweak the `cloudbuild.yaml`?
+    * Tip: add a step with a simple bash script..
+* What if you want to do something much more complicated for your CI/CD?
+    * Tip: Leverage [Cloud Deploy](https://cloud.google.com/deploy?hl=it)
