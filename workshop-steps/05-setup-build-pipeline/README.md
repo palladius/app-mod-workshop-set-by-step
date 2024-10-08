@@ -200,6 +200,11 @@ In that case, make sure to create one:
     * region: `europe-west8` (Milan)
     * *leave everything else untouched.*
 
+## Tips
+
+* **Feedback loop**. If you find yourself commit 10 times in a minute since your YAMl has a typo, consider instead learning
+  to use [`gcloud builds submit`](https://cloud.google.com/sdk/gcloud/reference/builds/submit).
+
 ## Conclusions
 
 If you're lucky you'll get to a point where your red history becomes green:
@@ -222,5 +227,7 @@ Some ideas:
     * Tip: add a step with a simple bash script..
 * What if you want to do something much more complicated for your CI/CD?
     * Tip: Leverage [Cloud Deploy](https://cloud.google.com/deploy?hl=it)
+* Are you tired about adding all your ENV manually? Consider uploading your whole `.env` to Secret Manager and mount it as a file!
+  I've done it and it makes your dev/ops experience much easier to maintain (although it takes some time to set up).
 
 TODO(ricc): add your app CB.yaml here with PROD commented out

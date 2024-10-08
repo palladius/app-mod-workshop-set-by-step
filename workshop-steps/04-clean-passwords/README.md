@@ -1,8 +1,10 @@
+## ENVification
+
 Preparing an app for the cloud is all about extracting pieces of info from the app to the outside world,
-and this is normally done (as a first step) with `ENV` variables. this allows you to deploy similar versions
+and this is normally done (as a first step) with `ENV` variables. This allows you to deploy similar versions
 of the same app to different endpoints, with slightly different configurations.
 
-Let's see4 this with some examples.
+Let's see this with some examples.
 
 ## Respect the Environment (TODO(ricc) integra meglio con il 2.5)
 
@@ -66,9 +68,71 @@ $db_user = getenv('DB_PASS'); // Stored and linked to Secret Manager
 * Now we need to tell Cloud run how to get this information:
 * Finally, clean up your code and remove every essence of DB_PASS. Your code is now clean!
 
-## RICC rimuyovimi quando funge
+## Tweaking Cloud Run
 
-TODO(Ricc): finisci sta parte e trova la riga da metter su cloud run tipo:
+Cloud run is able to both:
 
-* TOGLI --env DB PASS
-* METTI --env-ecret sobenme secrets/php-amarcord-db-pass
+* store ENV variables (of course!), or
+* reference Secret Manager (more secure).
+
+As we say in Italy, *learn the art and put it apart*.
+
+It's important to learn both ways so you can choose the one you prefer.
+
+### Our exercise
+
+We want to change Cloud Run from this ENV-only approach:
+
+![4 ENVs](image-2.png)
+
+To this mixed approach:
+
+
+![3 ENV passwords and 1 SM password](image-1.png)
+
+### Cloud Run script
+
+From a bash perspective, this means changing from:
+
+```bash
+gcloud --project "$PROJECT_ID" run deploy \
+    php-amarcord-bin \
+    --source . \
+    --port 80 \
+    \
+    --set-env-vars DB_PASS="$DB_PASS" \
+    --set-env-vars DB_USER="$DB_USER" \
+    --set-env-vars DB_HOST="$DB_HOST" \
+    --set-env-vars DB_NAME="$DB_NAME" \
+    \
+    --region europe-west8 \
+    --allow-unauthenticated
+```
+
+to something like:
+
+```bash
+PROJECT_NUMBER="1234567809" # your project number
+gcloud --project "$PROJECT_ID" run deploy \
+    php-amarcord-bin \
+    --source . \
+    --port 80 \
+    \
+    --set-secrets DB_PASS="projects/$PROJECT_NUMBER/secrets/php-amarcord-db-pass" \
+    \
+    --set-env-vars DB_USER="$DB_USER" \
+    --set-env-vars DB_HOST="$DB_HOST" \
+    --set-env-vars DB_NAME="$DB_NAME" \
+    --set-env-vars APP_NAME="$APP_NAME (built locally from CLI)" \
+    --set-env-vars APP_VERSION="${APP_VERSION}-obsolete-cli" \
+    \
+    --region europe-west8 \
+    --allow-unauthenticated
+```
+
+TODO(Ricc): magari trasforma in tabella lato a lato.
+
+## Final result
+
+We want to have this on Cloud Run:
+

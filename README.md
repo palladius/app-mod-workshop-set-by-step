@@ -8,12 +8,11 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 
 ## folder
 
-* `app/` Contains a `curated` copy of the [🧑🏻‍💻 gdgpescara/app-mod-workshop](https://github.com/gdgpescara/app-mod-workshop) app (since i have no control of the original code).
-    * Current commit: `35e71a981a53299319da1ff209be2b4e7b3e20c6` from Tue Oct 1 2024
+* Navigate the `workshop-steps/` folder and scroll the READMEs in alpha order. Each folder has some contextual goodies.
 
 ## Prerequisites
 
-* A computer with a browser.
+* A computer with a browser, connected to the internet.
 * Some GCP credits. Ask your local Google aficionado for some ;)
 * `gcloud` working.
     * Are you working **local**? download it [here](https://cloud.google.com/sdk/docs/install). You will also need some nice editor (eg `vscode` or ).
@@ -24,7 +23,6 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 **Nice to haves**:
 
 * Install [Cloud Code](https://cloud.google.com/code?hl=it) on your local `vscode` or `JetBrains` IDEs.
-* rename the repo with a better English name: NOT set-by-step but step-by-step.
 
 ## License
 
