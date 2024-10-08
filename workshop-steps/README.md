@@ -1,27 +1,14 @@
+# How to use this
 
-# BELLA
+The workshop "PHP Amarcord" is done this way:
 
-Riccardo, steps per ora
+* navigate every folder in alpha order (starting with 00..)
+* Scroll and execute each README.
+* If you get stuck, ask for help. If you can't find help, check the resources in the folder. There might be solutions already prepared for you.
 
-## Steps
 
-* `00-fork-code/`. After doing step 0, you mioght want o jump to step 4 as spinning a SQL instance might take 10m or so.
-* `01-dockerize/`
-* `02-gcloud-deploy-to-cloud-run/`
-* `03-no-cleartext-password/`
-* `04-database-is-missing/`
+If you're complete stuck, get inspiration by this fully-functional app: https://github.com/Friends-of-Ricc/app-mod-workshop
 
-# BRUTTA
+This can be used as a self-paced workshop, or as a real-time classroom workshop. In this case, the instructors will give
+you some time for each step and when the time is out, they'll provide solutions to quickly move to the next one.
 
-## Steps forse fatti meglio
-
-* inizia Cloud SQL immediatamente
-* git clone app appena puoi, cosi' cominci a metterci un .env e roba varia.
-* la cosa da clonare DOVREBBE essere super semplice, tipo avere .env.dist e cloudbuild e cosi via gia imbastiti.
-
-## Con cosa cominciamo?
-
-Le cose con cui comnciare dovrebbero essere:
-
-1. Fork + `git pull` repo cosi' la gente ha spazio per mettere le cose iterativamente sul loro `.env`.
-2. Crea un DB MySQL (che poi ci mette del tempo)
