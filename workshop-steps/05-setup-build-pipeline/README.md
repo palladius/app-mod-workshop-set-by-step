@@ -53,7 +53,7 @@ How do we do all of this?
 
 (*) This is the simplest way. Usually I do the `cloudbuild.yaml` part.
 
-## i've got the power!
+## I've got the power!
 
 Now, the trigger won't work unless you give the **Cloud Build service account** (*what is a service account? The email of a "robot" who acts on your behalf for a task - in this case building stuff in the Cloud!*).
 
@@ -107,6 +107,11 @@ Ragazzi fatemi un piacere. provate a SALTARE la parte di CLONAGGIO. Mi sembra ch
 Provate a seguire i passi di sotto, ma SENZA creare un secondo trigger
 eidtemi se il primo magicamente funge.
 
+Exxomi - dopo aver provato ambo le strade mi sono accorto che il CBYAML serve perche puoi definire ENV.
+Se usi l'automatico NON puoi definire ENV.
+Se mi dimostrate che ho torto, preferisco - cosi usiamo un solo CB.
+Se no tocca disattivare il vecchio e attivare il nuovo:
+
 ## YAML YAML guaglio' (ie, more control with `cloudbuild.yaml`)
 
 Let's try to do the same with a more prescriptive multi-stage home-written Cloud Build `YAML` file.
@@ -118,9 +123,8 @@ Let's try to do the same with a more prescriptive multi-stage home-written Cloud
 * Rename `on-git-commit-build-php-app-1` to `on-git-commit-build-php-app-cbyaml`
 * Click EDIT
 * Configuration: change from "autodetected" to "Cloud Build configuration file (YAML or JSON)"
-* Create or copy from here the `cloudbuild.yaml`
-    * TODO ricc quando funge mettilo qui.
-    * WIP - for now its here.: `git@github.com:Friends-of-Ricc/app-mod-workshop.git`
+* Create or copy from here the `./cloudbuild.yaml`:
+    * If you want to live on the edge, try tatest Riccardo's version: [cloudbuild.yaml](https://github.com/Friends-of-Ricc/app-mod-workshop/blob/main/cloudbuild.yaml)
 * Add variables (note you need to prepend them with a "_"):
      * `_DB_NAME`: Your ENV `DB_NAME`
      * `_DB_USER`: Your ENV `DB_USER`
@@ -174,6 +178,10 @@ Feels good, doesn't it!
 When you're done, you can now uncomment the "deploy to PROD" part. You'll have the SAME code deployed to prod *after*
 successfully being deployed to dev. This is a pretty simple yet meaningful `git commit` -> `dev` -> `prod` promotion,
 which ensures that the same code is deployed to two different endpoints which differ only in the ENV side.
+
+Every time a new `git commit` flows to github, after a few minutes, a new revision should pop up in your app here:
+
+* https://console.cloud.google.com/run/detail/europe-west8/php-amarcord-dev/revisions (*this link will only work if you kept the default region/name - adapt otherwise*)
 
 Some ideas:
 

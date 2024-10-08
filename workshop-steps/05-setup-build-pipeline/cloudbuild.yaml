@@ -1,0 +1,96 @@
+# Remi CB copied from https://b.corp.google.com/issues/371959026
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - '--no-cache'
+      - '-t'
+      - >-
+        $_AR_HOSTNAME/$PROJECT_ID/cloud-run-source-deploy/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+      - .
+      - '-f'
+      - Dockerfile
+    id: Build docker file.
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - >-
+        $_AR_HOSTNAME/$PROJECT_ID/cloud-run-source-deploy/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+    id: Push to Artifact Repository
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    # All configs for `gcloud run deploy` are here: https://cloud.google.com/sdk/gcloud/reference/run/deploy
+    args:
+      - run
+      - deploy
+      # alternative: requires service to already exist (will work all the time, except the first :P)
+      # - services
+      # - update
+      - ${_SERVICE_NAME}-dev
+      - '--platform=managed'
+      - '--port=80'
+      - >-
+        --image=$_AR_HOSTNAME/$PROJECT_ID/cloud-run-source-deploy/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+#      - >-
+#        --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,php-amarcord-github-user=$_GITHUB_USER,devfest-city=$_DEVFEST_CITY
+      - '--region=$_DEPLOY_REGION'
+      - '--quiet'
+      # Note to self: non va col services..
+      - '--allow-unauthenticated'
+    env: # https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values=
+    # copying RAILS_ENV approach.
+    - PHP_ENV=development
+    - PORT=80
+    - APP_NAME="A PHP Amarcord app deployed via Cloud Build to dev - break me as much as you want!"
+    - DEBUG="true"
+    - CODE_REPO="https://github.com/${_GITHUB_USER/app-mod-workshop/"
+    id: Deploy to DEV version
+    entrypoint: gcloud
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    # All configs for `gcloud run deploy` are here: https://cloud.google.com/sdk/gcloud/reference/run/deploy
+    args:
+      - run
+      - deploy
+      # alternative: requires service to already exist (will work all the time, except the first :P)
+      # - services
+      # - update
+      - ${_SERVICE_NAME}-prod
+      - '--platform=managed'
+      - '--port=80'
+      - >-
+        --image=$_AR_HOSTNAME/$PROJECT_ID/cloud-run-source-deploy/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+      - >-
+        --labels=managed-by=gcp-cloud-build-deploy-cloud-run,commit-sha=$COMMIT_SHA,gcb-build-id=$BUILD_ID,php-amarcord-github-user=$_GITHUB_USER,devfest-city=$_DEVFEST_CITY
+      - '--region=$_DEPLOY_REGION'
+      - '--quiet'
+      # Note to self: non va col services..
+      - '--allow-unauthenticated'
+    env: # https://cloud.google.com/build/docs/configuring-builds/substitute-variable-values=
+    # copying RAILS_ENV approach.
+    - PHP_ENV=production
+    - PORT=80
+    - APP_NAME="A PHP Amarcord app deployed via Cloud Build to PROD - please do not deploy on Fridays!"
+    - DEBUG="false"
+    - CODE_REPO="https://github.com/${_GITHUB_USER/app-mod-workshop/"
+    id: Deploy to PROD version
+    entrypoint: gcloud
+
+
+images:
+  - >-
+    $_AR_HOSTNAME/$PROJECT_ID/cloud-run-source-deploy/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+options:
+  substitutionOption: ALLOW_LOOSE
+  logging: CLOUD_LOGGING_ONLY
+substitutions:
+  _DEPLOY_REGION: europe-west8
+  _AR_HOSTNAME: europe-west8-docker.pkg.dev
+  _PLATFORM: managed
+  _SERVICE_NAME: php-amarcord
+  _EXECUTION_ENVIRONMENT: 'rgc/cloudbuild'
+  _GITHUB_USER: Friends-of-Ricc # change your your own, eg 'gregorio'
+  _DEVFEST_CITY: modena
+tags:
+  - gcp-cloud-build-deploy-cloud-run
+  - php-amarcord
+  - ricc-ne-sa-a-tronchi
