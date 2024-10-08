@@ -135,7 +135,7 @@ Let's try to do the same with a more prescriptive multi-stage home-written Cloud
 * When you've created the trigger, NOw it's time to add the `cloudbuild.yaml` to your code base. If it breaks, no biggie, it never works on first try!
     * If you committed before creating the build trigger, no problem. In this case, go to the https://console.cloud.google.com/cloud-build/triggers page and hit "Run" in the newly created `on-git-commit-build-php-app-cbyaml`.
 
-### Troubleshoot
+### Troubleshoot / errors
 
 Usually it takes a while to get CB to work. You need tolearn to check logs and refine the script. Usually the docker complains about a missing ENV or Cloud Run won't start from some reason.
 
@@ -160,10 +160,32 @@ A more sneaky error is this:
 Step #2 - "Deploy to DEV version": ERROR: (gcloud.run.deploy) [839850161816@cloudbuild.gserviceaccount.com] does not have permission to access namespaces instance [ricc-demos-386214] (or it may not exist): Permission 'iam.serviceaccounts.actAs' denied on service account 839850161816-compute@developer.gserviceaccount.com (or it may not exist). This command is authenticated as 839850161816@cloudbuild.gserviceaccount.com which is the active account specified by the [core/account] property.
 ```
 
+#### Permission: Cloud Run to read Secret Manager
+
+```
+ Revision 'php-amarcord-dev-00009-dkp' is not ready and cannot serve traffic. spec.template.spec.containers[0].env[3].value_from.secret_key_ref.name: Permission denied on secret: projects/839850161816/secrets/php-amarcord-db-pass/versions/latest for Revision service account 839850161816-compute@developer.gserviceaccount.com. The service account used must be granted the 'Secret Manager Secret Accessor' role (roles/secretmanager.secretAccessor) at the secret, project or higher level.
+```
+
+![alt text](image-6.png)
+
+This means Cloud Build creates a correct revision, but Cloud Run can't read it.
+
+Solution:
+
+* go to IAM page
+* click "+ Grant Access"
+* empower your compute SA (eg ` 839850161816-compute@developer.gserviceaccount.com`) with the 'Secret Manager Secret Accessor' role.
+  The error says it all, really.
+      * The email should autocomplete
+      * the role, too.
+
 #### Artifact Registry errors
 
 You might have noticed there's a missing piece here: we did NOT create the Docker-type Artifact Registry,
 leveraging the existing one created by cloud run for us and called `cloud-run-source-deploy`.
+
+![AR preexising cloud-run-source-deploy repo](image-5.png)
+
 This is a bit like cheating - we shortened this course by re-using an existing one. If for some reason you don't have
 an existing AR called "cloud-run-source-deploy" in your favorite `GCP_REGION`, chances are the build will fail.
 
