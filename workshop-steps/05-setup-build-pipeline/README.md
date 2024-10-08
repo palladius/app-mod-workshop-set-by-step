@@ -123,7 +123,7 @@ Let's try to do the same with a more prescriptive multi-stage home-written Cloud
 * Rename `on-git-commit-build-php-app-1` to `on-git-commit-build-php-app-cbyaml`
 * Click EDIT
 * Configuration: change from "autodetected" to "Cloud Build configuration file (YAML or JSON)"
-* Create or copy from here the `./cloudbuild.yaml`:
+* Create or copy from here the **[cloudbuild.yaml](https://github.com/palladius/app-mod-workshop-set-by-step/blob/main/workshop-steps/05-setup-build-pipeline/cloudbuild.yaml)** :
     * If you want to live on the edge, try tatest Riccardo's version: [cloudbuild.yaml](https://github.com/Friends-of-Ricc/app-mod-workshop/blob/main/cloudbuild.yaml)
 * Add variables (note you need to prepend them with a "_"):
      * `_DB_NAME`: Your ENV `DB_NAME`
