@@ -56,6 +56,7 @@ How do we do all of this?
 ## Testing the trigger
 
 Now to test the trigger, just commit a very simple change to the PHP repo.
+
 ## Riccardo lets see what happens with autodetected...
 
 * Change your app code.
@@ -76,7 +77,7 @@ If you click on the `Build Artifacts` you should see that we built a "big zip" a
 
 This is really good, but we can do even better...
 
-## More control on cloudbuild.yaml
+## More control with `cloudbuild.yaml` (vecchio)
 
 Now we're able to trigger a build, but we want more control:
 
@@ -84,17 +85,15 @@ Now we're able to trigger a build, but we want more control:
 * push a change to Cloud Run (dev)
 * [optional] If it all works, push the same change to Cloud Run (prod).
 
-# RICCARDO MERGED THIS - TODO guarda che vada bene
 
 
-
-## Per i modenesi
+## Per i 🟡🔵 modenesi (Mirko e Maurizio ->  Ⓜ️&Ⓜ️s)
 
 Ragazzi fatemi un piacere. provate a SALTARE la parte di CLONAGGIO. Mi sembra che l'autodetected passi aTUOMATICAMENTE al cloudbuild.yaml quando lo trova.
 Provate a seguire i passi di sotto, ma SENZA creare un secondo trigger
 eidtemi se il primo magicamente funge.
 
-## YAML YAML guaglio' (tm)
+## YAML YAML guaglio' (ie, more control with `cloudbuild.yaml`)
 
 Let's try to do the same with a more prescriptive multi-stage home-written Cloud Build `YAML` file.
 
