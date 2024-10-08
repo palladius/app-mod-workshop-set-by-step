@@ -1,4 +1,5 @@
-# Remi CB copied from https://b.corp.google.com/issues/371959026
+# strangely inspired by Riccardo's https://github.com/Friends-of-Ricc/app-mod-workshop/blob/main/cloudbuild.yaml
+# jokes apart, if this doesn't work check the latest version there!
 steps:
   - name: gcr.io/cloud-builders/docker
     args:

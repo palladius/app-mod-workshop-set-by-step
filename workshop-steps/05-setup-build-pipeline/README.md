@@ -160,12 +160,23 @@ A more sneaky error is this:
 Step #2 - "Deploy to DEV version": ERROR: (gcloud.run.deploy) [839850161816@cloudbuild.gserviceaccount.com] does not have permission to access namespaces instance [ricc-demos-386214] (or it may not exist): Permission 'iam.serviceaccounts.actAs' denied on service account 839850161816-compute@developer.gserviceaccount.com (or it may not exist). This command is authenticated as 839850161816@cloudbuild.gserviceaccount.com which is the active account specified by the [core/account] property.
 ```
 
-#### Artifact Repository errors
+#### Artifact Registry errors
 
-You might have noticed there's a missing piece here: we did NOT create the Docker-type Artifact Repository, leveraging the existing one created by cloud run for us and called `cloud-run-source-deploy`. This is alike cheating - we shortened this course by re-using an existing one. If for some reason you don't have an existing AR called "cloud-run-source-deploy" in your favorite `GCP_REGION`, chances are the build will fail. In that case, make sure to create one:
+You might have noticed there's a missing piece here: we did NOT create the Docker-type Artifact Registry,
+leveraging the existing one created by cloud run for us and called `cloud-run-source-deploy`.
+This is a bit like cheating - we shortened this course by re-using an existing one. If for some reason you don't have
+an existing AR called "cloud-run-source-deploy" in your favorite `GCP_REGION`, chances are the build will fail.
 
-* Go to TODO
+In that case, make sure to create one:
 
+* Go to [Artifact Registry](https://console.cloud.google.com/artifacts)
+* check for a `cloud-run-source-deploy`
+* If it doesn't exist, create ne:
+    * "create repository"
+    * format: Docker
+    * name:  `cloud-run-source-deploy`
+    * region: `europe-west8` (Milan)
+    * *leave everything else untouched.*
 
 ## Conclusions
 
