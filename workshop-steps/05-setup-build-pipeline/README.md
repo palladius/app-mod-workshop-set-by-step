@@ -122,12 +122,12 @@ Let's try to do the same with a more prescriptive multi-stage home-written Cloud
     * TODO ricc quando funge mettilo qui.
     * WIP - for now its here.: `git@github.com:Friends-of-Ricc/app-mod-workshop.git`
 * Add variables (note you need to prepend them with a "_"):
-     * `_APP_NAME`: something mnemonic about your PHP app
      * `_DB_NAME`: Your ENV `DB_NAME`
      * `_DB_USER`: Your ENV `DB_USER`
      * `_DB_HOST`: Your ENV `DB_HOST`
      * What about `DB_PASS`? Great question! You don't need her. She's in the beautiful and secure realm of Secret Manager! By the end of this exercise, you'll wish you'd moved everything to SM!
-![alt text](image-2.png)
+<!-- ![OBSOLETO alt text](image-2.png) -->
+![Add Name, user, host to CB config](image-4.png)
 * When you've created the trigger, NOw it's time to add the `cloudbuild.yaml` to your code base. If it breaks, no biggie, it never works on first try!
     * If you committed before creating the build trigger, no problem. In this case, go to the https://console.cloud.google.com/cloud-build/triggers page and hit "Run" in the newly created `on-git-commit-build-php-app-cbyaml`.
 
@@ -181,3 +181,5 @@ Some ideas:
     * Tip: add a step with a simple bash script..
 * What if you want to do something much more complicated for your CI/CD?
     * Tip: Leverage [Cloud Deploy](https://cloud.google.com/deploy?hl=it)
+
+TODO(ricc): add your app CB.yaml here with PROD commented out
