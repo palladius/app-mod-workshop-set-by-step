@@ -66,6 +66,31 @@ $db_user = getenv('DB_PASS'); // Stored and linked to Secret Manager
 * Now we need to tell Cloud run how to get this information:
 * Finally, clean up your code and remove every essence of DB_PASS. Your code is now clean!
 
+
+## YAML YAML guaglio' (tm)
+
+Let's try to do the same with a more prescriptive multi-stage home-written Cloud Build `YAML` file.
+
+* Copy the previous script, since most stuff will be the same as your first script: Click the 3 dots, then "Duplicate"
+
+![alt text](image-1.png)
+
+* Rename `on-git-commit-build-php-app-1` to `on-git-commit-build-php-app-cbyaml`
+* Click EDIT
+* Configuration: change from "autodetected" to "Cloud Build configuration file (YAML or JSON)"
+* Create or copy from here the `cloudbuild.yaml`
+    * TODO ricc quando funge mettilo qui.
+    * WIP - for now its here.: `git@github.com:Friends-of-Ricc/app-mod-workshop.git`
+* Add variables (note you need to prepend them with a "_"):
+     * `_APP_NAME`: something mnemonic about your PHP app
+     * `_DB_NAME`: Your ENV `DB_NAME`
+     * `_DB_USER`: Your ENV `DB_USER`
+     * `_DB_HOST`: Your ENV `DB_HOST`
+     * What about `DB_PASS`? Great question! You don't need her. She's in the beautiful and secure realm of Secret Manager! By the end of this exercise, you'll wish you'd moved everything to SM!
+![alt text](image-2.png)
+
+## RICC rimuyovimi quando funge
+
 TODO(Ricc): finisci sta parte e trova la riga da metter su cloud run tipo:
 
 * TOGLI --env DB PASS
