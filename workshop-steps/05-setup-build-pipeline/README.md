@@ -53,6 +53,22 @@ How do we do all of this?
 
 (*) This is the simplest way. Usually I do the `cloudbuild.yaml` part.
 
+## i've got the power!
+
+Now, the trigger won't work unless you give the **Cloud Build service account** (*what is a service account? The email of a "robot" who acts on your behalf for a task - in this case building stuff in the Cloud!*).
+
+Your SA will fail to build and deploy unless you empower him to do it. Luckily it's easy!
+
+* go to [Settings](https://console.cloud.google.com/cloud-build/settings/service-account).
+* Tick these boxes:
+    * Cloud Run
+    * Secret Manager
+    * Service Accounts
+    * Cloud Build
+* Also tick the "Set as preferred service account"
+
+![alt text](image.png)
+
 ## Testing the trigger
 
 Now to test the trigger, just commit a very simple change to the PHP repo.
@@ -84,8 +100,6 @@ Now we're able to trigger a build, but we want more control:
 * build the artifact
 * push a change to Cloud Run (dev)
 * [optional] If it all works, push the same change to Cloud Run (prod).
-
-
 
 ## Per i 🟡🔵 modenesi (Mirko e Maurizio ->  Ⓜ️&Ⓜ️s)
 
