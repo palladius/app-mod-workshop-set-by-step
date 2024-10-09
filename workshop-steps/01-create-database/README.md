@@ -1,5 +1,5 @@
 
-Hey, we need a place where to store the Database in the Cloud!
+Hey, we need a place where to store the Database in the Cloud!!
 
 ## Create a SQL Instance (will take ~10min)
 
