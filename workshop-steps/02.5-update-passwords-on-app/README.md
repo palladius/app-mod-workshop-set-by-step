@@ -34,7 +34,7 @@ We are going to do this in 3 steps:
 Note we don't want to miss step 2 since it's very useful for everything else: you dont need to save APP_NAME into Secret Manager.
 
 
-## Step 1 to 2
+## Step 1 to 2: remove passwords from PHP code
 
 Take `config.php` and change this code:
 
@@ -69,12 +69,10 @@ Now, depending on how you have set up your app locally, you can run your app loc
 **Note** that once you've built the app for ENV you can change ENV at execution time without rebuilding it all the time. (if the password is instead set in the code, changing password requires rebuilding the code).
 
 
-
-
-
-
 ## Step 2 to 3
 
-We will do this later in TODO(ricc): verifica. `workshop-steps/04-no-cleanup-passwords/`.
+We will do this later in `workshop-steps/04-no-cleanup-passwords/`.
 
 Let's move to the next step now.
+
+TODO(ricc): Maurizio e Mirko: verificate che quel che ho scritto abbia senso. Grz.
