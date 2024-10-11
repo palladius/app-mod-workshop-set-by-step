@@ -1,5 +1,3 @@
-
-
 ## Open ended ideas
 
 Now you have an awesome modernized, shiny new PHP app (like a 2024 `Fiat 126`).
@@ -22,5 +20,14 @@ What can you do with it?
 Really?
 
 Well then, for every image in the DB, use Gemini multimodality to ask "what's in the image"?
-This could be done contextually to a prson uploading a new image, and maybe Gemini could take a guess in that being SFW or NSFW.
+This could be done contextually to a person uploading a new image, and maybe Gemini could take a guess in that being SFW or NSFW.
 Maybe wrap it in a Google Cloud Function.
+
+# Further ideas (merge conflict)
+
+* A Google Cloud (Run) Function with Gemini call via API_KEY which returns what's in an image provided the link to GCS?
+* Add to php a page with generation given `GEMINI_API_KEY` in SecretManager
+
+# Links
+
+* [Gemini and PHP](https://github.com/gemini-api-php/client) - not sure if `composer require gemini-api-php/client` will work with PHP 5.7. Welcome to 1955, Mertin!
