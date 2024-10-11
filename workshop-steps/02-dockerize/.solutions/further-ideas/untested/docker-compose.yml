@@ -1,0 +1,28 @@
+# copied from https://www.cloudways.com/blog/docker-php-application/
+
+version: '3.8'
+#services:
+#php-apache-environment:
+container_name: php-apache
+image: php:8.0-apache
+volumes:
+- ./php/src:/var/www/html/
+ports:
+- 8000:80
+
+
+db:
+    container_name: db
+    image: mysql
+    restart: always
+    environment:
+        MYSQL_ROOT_PASSWORD: veryverystrongpassword
+        MYSQL_DATABASE: image_catalog
+        MYSQL_USER: root
+        MYSQL_PASSWORD: veryverystrongpassword
+        # Need to change in PHP code:
+        # FROM: $db_host = 'localhost';
+        # FROM: $db_host = 'db';
+        MYSQL_HOST: db
+    ports:
+        - "9906:3306"

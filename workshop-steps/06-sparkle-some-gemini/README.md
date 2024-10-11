@@ -21,12 +21,8 @@ Really?
 
 Well then, for every image in the DB, use Gemini multimodality to ask "what's in the image"?
 This could be done contextually to a person uploading a new image, and maybe Gemini could take a guess in that being SFW or NSFW.
+
 Maybe wrap it in a Google Cloud Function.
-
-# Further ideas (merge conflict)
-
-* A Google Cloud (Run) Function with Gemini call via API_KEY which returns what's in an image provided the link to GCS?
-* Add to php a page with generation given `GEMINI_API_KEY` in SecretManager
 
 # Links
 
