@@ -45,6 +45,9 @@ Something like:
 
 ```bash
 docker run -it -p 80:8080 my-php-app-docker
+# or maybe
+docker run -it -p 8080:80 my-php-app-docker
+# i never remember.
 ```
 
 Then point your browser to that endpoint.
