@@ -44,7 +44,7 @@ Once you built it, you want to test if it runs.
 Something like:
 
 ```bash
-docker run -p 8080:80 my-php-app-docker
+docker run -it -p 80:8080 my-php-app-docker
 ```
 
 Then point your browser to that endpoint.
