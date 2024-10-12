@@ -3,20 +3,22 @@ We want to build this app for the cloud.
 
 This means packaging th code in some sort of ZIP file which contains all the info to run it in the Cloud.
 
-there are a few ways to package it:
+There are a few ways to package it:
 
-* `docker`. Very popular, but quite complex to setup correctly. You can cheat by copying the file here.
-* `buildpacks`. Less popular, but tends to 'auto guess' what to build and what to run. Often it just works!
+* `docker`. Very popular, but quite complex to setup correctly. You can cheat by copying the file here. [DONE]
+* `buildpacks`. Less popular, but tends to 'auto guess' what to build and what to run. Often it just works! [wip]
 
 
-## Buildpacks
+## Buildpacks (🚧 #workinprogress)
+
+With Buildpacks the app gets built automagically. Unfortunately you don't have full control so you might end up with unexpected configuration.
 
 * Check out   BuildPacks on GCP: https://cloud.google.com/docs/buildpacks/build-application and [here](https://cloud.google.com/docs/buildpacks/build-application#build_an_application_remotely)
 * Install `pack`: https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/
 * buildpacks in PHP: https://cloud.google.com/docs/buildpacks/php (where it tells you how to set up the PHP version)
 * Try something like `pack build --builder=gcr.io/buildpacks/builder my-app-with-buildpacks`
 
-## Docker
+## Docker (more control)
 
 *But I want to have control! I want Docker!*
 
@@ -26,22 +28,26 @@ Sure! This makes sense when you need to configure specific libraries, and inject
 
 Ok, how do you get the `Dockerfile`?
 
-* I've asked Gemini this question. Result: under `dockerize-gemini/` folder
-* I just needed to change `COPY .` into `COPY app/` and it worked at first time!
-* Yup, it's THAT simple!
-* You will notice a further bug n the future which can be solved by adding a library..
+* I've asked Gemini this question. Result: under `dockerize-gemini/` folder.
+    * I just needed to change `COPY .` into `COPY app/` and it worked at first time! Yup, it's THAT simple!
+    * You will notice a further bug in the future which can be solved by adding a library..
+* You can just copy the working one under `.solutions` but I encourage you to do some tests. To test a docker file you need to:
+     * install `docker` locally (your cloud shell has it!)
+     * edit a file called `Dockerfile`.
+     * have the app somewhere, eg under `app/`
+     * Type: `docker build -t my-php-app-docker app/`.
 
-## does it work?
+## Does it work?
 
-Since we haven't configured the DB Yet, we get this error:
+Since we haven't configured the DB Yet, a *working* app shows this error:
 
 ```
 Errore di connessione: could not find driver
 ```
 
-If you got here, it's a **SUCCESS**! On to the next chapter.
+If you got here, it's a **SUCCESS**!
 
-
+On to the next chapter.
 
 
 ## URLography

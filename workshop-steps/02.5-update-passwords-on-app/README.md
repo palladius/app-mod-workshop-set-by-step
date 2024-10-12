@@ -1,13 +1,3 @@
-## Dubbio amletico di Riccardo [REMOVEME]
-
------------------
-
-**Ragazzi sta parte non so se metterla DOPO aver creato il DB, o dopo aver fatto la dockerizzazione**.
-Se uno esperimenta il locale con PHP, la fa prima, ma se uno non ha un local LAMP stack allora meglio farlo dopo la
-dockerizzazione. Io nel mentre la metto qui
-
------------------
-
 ## Update your password (the dirty way)
 
 We want the app to work ASAP, so we will first make it work the *wrong* way. This is a good way to learn, step by step.
@@ -21,9 +11,9 @@ We want the app to work ASAP, so we will first make it work the *wrong* way. Thi
 
 | Technology   |  Security     |  Notes |
 |----------|:-------------:|------:|
-| Passwords in the code |    **<span style="color:red">non existant</span>** | Fix it ASAP. Do not ship to production, do not check your code, do not tell your friends. |
+| Passwords in the code |    **<span style="color:red">non existant</span>** | Fix it ASAP. Do not ship to production, do not check your code. This is BAD. |
 | ENV |   <span style="color:orange">minimum</span>    |  ENV is good for low-secretive stuff like a DB_NAME. It's exchanged between systems so it can surface somewhere. Try NOT to use for everything but secrets/keys. |
-| [Secret Manager](https://cloud.google.com/security/products/secret-manager?hl=it) | <span style="color:green">high</span> | [Best in-class Security](https://cloud.google.com/security/products/secret-manager?hl=it) from Google Cloud. INtegrates beautifully with *Cloud Run*. |
+| [Secret Manager](https://cloud.google.com/security/products/secret-manager?hl=it) | <span style="color:green">high</span> | [Best in-class Security](https://cloud.google.com/security/products/secret-manager?hl=it) from Google Cloud. Integrates beautifully with *Cloud Run*. |
 
 We are going to do this in 3 steps:
 
@@ -60,19 +50,19 @@ $db_pass = getenv('DB_PASS')  ?: '_PWD_SCONOSCIUTA_';
 
 This syntax will look for ENV and will use the part after `?:` as default. This is good in case you fail to load ENV, so the page output will tell you if it's using the default values.
 
-Note: This syntax is PHP 5.3-compatible (there are more elegant ones which require PHP 8).
+**Note**: This syntax is PHP 5.3-compatible (there are more elegant ones which require PHP 8).
 
 ## Test the code!
 
 Now, depending on how you have set up your app locally, you can run your app locally (with docker, or buildpacks).
 
-**Note** that once you've built the app for ENV you can change ENV at execution time without rebuilding it all the time. (if the password is instead set in the code, changing password requires rebuilding the code).
+The hard part is for the app to READ the env vars you've created. Most languages have a library called `dotenv` for it. Alternatively, you can explicitly tell Docker or Google Cloud which ENV to import.
+
+**Note** that once you've built the app for ENV you can change ENV at execution time without rebuilding it all the time. *If the password is instead set in the code, changing password requires rebuilding the code*.
 
 
 ## Step 2 to 3
 
-We will do this later in `workshop-steps/04-no-cleanup-passwords/`.
+⏭️ We will do this later in chapter 04.
 
 Let's move to the next step now.
-
-TODO(ricc): Maurizio e Mirko: verificate che quel che ho scritto abbia senso. Grz.
