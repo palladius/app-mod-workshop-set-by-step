@@ -1,12 +1,12 @@
 ## ENVification
 
-Preparing an app for the cloud is all about extracting pieces of info from the app to the outside world,
-and this is normally done (as a first step) with `ENV` variables. This allows you to deploy similar versions
+Preparing an app for the cloud is all about extracting pieces of info from the app to the outside world, and this is normally done (as a first step) with `ENV` variables. This allows you to deploy similar versions
 of the same app to different endpoints, with slightly different configurations.
 
-Let's see this with some examples.
+Let's see some examples.
 
-## Respect the Environment (TODO(ricc) integra meglio con il 2.5)
+## Respect the Environment
+<!--  (TODO(ricc) integra meglio con il 2.5) -->
 
 It all starts with `ENV`.
 
