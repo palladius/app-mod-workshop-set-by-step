@@ -49,7 +49,7 @@ docker run -it -p 80:8080 my-php-app-docker
 
 Then point your browser to that endpoint.
 * If localhost: open http://localhost:8080/
-* If cloud Shell, click on the button to expose local 8080 via proxy.
+* If cloud Shell, click on the button to expose local `8080` via proxy (button "Preview" -> "preview on port 8080").
 
 ## Does it run?
 
