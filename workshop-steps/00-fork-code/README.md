@@ -24,3 +24,7 @@ gh repo clone YOUR_GITHUB_USER/app-mod-workshop
 If it's the first time you do the `git clone` with `ssh`, you might have to set up the SSH key both locally and on github side.
 
 To optimize time 🚄, you might want to just git clone with http, no password required. You won't be able to *push* to your repo but you can download the code, get started and edit locally.
+
+## Why do I need a `fork`?
+
+while, this is not stricly needed for steps 1-4, it becomes needed at the `Cloud Build` step to establish a pipeline. You want a build to be triggered when *you** do a `git commit`, not anyone else.

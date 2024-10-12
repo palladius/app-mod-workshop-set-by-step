@@ -24,6 +24,13 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 
 * Install [Cloud Code](https://cloud.google.com/code?hl=it) on your local `vscode` or `JetBrains` IDEs.
 
+## Where to edit your code
+
+I see two possible journeys to enjoy this workshop.
+
+1. [5% of people] If you are a **power user**, you'll enjoy coding locally on `vscode` and install `gcloud`, `mysql`, `php`, and so on. Chances are, you have most of it already installed and of course you have a Linux or a Mac.
+2. [**default** 95%] If you are not a CLI abituee, or if you have a Windows machine, you're better off using **Cloud Shell**. This is very easy to use, it's a shell in the cloud with ALL the code you need preinstalled. It's amazing how hands-off this really is. The only  drawback is increased latency as code is not local to your machine. However, the increase of speed for "day 0" and "day 1" dev setups is palpable.
+
 ## License
 
 MIT just like original app.
