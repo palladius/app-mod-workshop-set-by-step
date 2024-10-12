@@ -37,7 +37,21 @@ Ok, how do you get the `Dockerfile`?
      * have the app somewhere, eg under `app/`
      * Type: `docker build -t my-php-app-docker app/`.
 
-## Does it work?
+### Docker run
+
+Once you built it, you want to test if it runs.
+
+Something like:
+
+```bash
+docker run -p 8080:80 my-php-app-docker
+```
+
+Then point your browser to that endpoint.
+* If localhost: open http://localhost:8080/
+* If cloud Shell, click on the button to expose local 8080 via proxy.
+
+## Does it run?
 
 Since we haven't configured the DB Yet, a *working* app shows this error:
 
