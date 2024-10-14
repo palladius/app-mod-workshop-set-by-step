@@ -22,6 +22,7 @@ On Saturday 12 Oct 2024, Riccardo Carlesso drove a "PHP Amarcord" workshop in De
 
 * ~15 people were in the workshiop for 2h.
 * Another 10-15 were in the workshop for 45-90min.
+* **19** forks from https://github.com/gdgpescara/app-mod-workshop (likely **16** workshop + 3 Ricc+organizers)
 
 In that time,
 * Everyone was able to set up Cloud SQL and connect to it.
