@@ -5,4 +5,6 @@ app:
 
 
 grep-todos:
-	rgrep 'TODO(ricc)' .
+# Note this strange quoting is to avoid finding myself :)
+	@echo Riccardo these are the TODOs to fix.
+	grep -r TODO'(ricc)' .

@@ -47,7 +47,8 @@ Something like:
 docker run -it -p 80:8080 my-php-app-docker
 # or maybe
 docker run -it -p 8080:80 my-php-app-docker
-# i never remember.
+# i never remember which of the two it is.
+# TODO(ricc): verifica a casa e cancella quella sbagliata.
 ```
 
 Then point your browser to that endpoint.
