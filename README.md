@@ -10,6 +10,8 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 
 * Navigate the `workshop-steps/` folder and scroll the READMEs in alpha order. Each folder has some contextual goodies.
 
+![Image](images/php-amarcord.png)
+
 ## Prerequisites
 
 * A computer with a browser, connected to the internet.
