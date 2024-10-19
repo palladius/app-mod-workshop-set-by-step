@@ -3,8 +3,17 @@ You've completed EVERYTHING, what's missing?
 
 Some food for thought:
 
-## Idea: Implement IAP
+## Uploads to GCS
 
-Delve into [cloud IAP](https://cloud.google.com/security/products/iap?hl=it) and protect your application.
+This is a complex migration: you want
 
-Maybe open to only people in your company!
+* Use PHP to send uploads to a GCS bucket.
+* set up a secure Service Account that does that.
+* enabled public bucket (for simplicity, or you can set up a more complex signed URL).
+* pull/visualize images from the bucket.
+
+To achieve this, you need to install PHP GCP libraries to access GCS.
+
+## Security
+
+To secure the app, this is a different chapter entirely, check out the `SECURITY.md`
