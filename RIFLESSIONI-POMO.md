@@ -63,14 +63,15 @@ section 00 to provide more. We had to address this verbally to each one.
 * [maurizio] Some people were facing issues while pulling the app repo using ssh. We overcome with git clone <https://github.com/REPO- NAME>
 
 
-### Where we were lucky
+### Where we were lucky ☘️
 
 * Few people were blocked at computer setup.
-* Many power users. People contributed back (your Dockerfile supports PHP7.4 but you said 5.7? Let me build it for you and send you via email).
+* Many power users.
+* People contributed back (your Dockerfile supports PHP7.4 but you said 5.7? Let me build it for you and send you via email).
 
 ## Action items
 
-* `b/0001` Verify if you can do something different than Cloud SQL. We calculate Cloud SQL will last ~24h.
+* `b/0001` [P2] Verify if you can do something different than Cloud SQL. We calculate Cloud SQL will last ~24h.
      * Either teach them to configure Cloud Scheduler to turn off cloud sql `gcloud instances stop blah blah`
      * or use Firebase
      * or just tell them nicely (as I did) in some cleanup folder.
@@ -84,3 +85,10 @@ section 00 to provide more. We had to address this verbally to each one.
           - Streamlined experience: attendees can work directly without jumping back and forth
      * **Negatives**: a git repo allows for PRs and I just merged two (one on README/PoMo and one on PHP 5.7 Dockerfile - wow! I';m humbled from such a great community!)
 
+| Priority | Bug ID | Owner | Description |
+|---|---|---|---|
+| P2 | b/0001 | Riccardo | Verify if there's an alternative to Cloud SQL for a ~24h duration. Consider Cloud Scheduler, Firebase, or providing guidance in a cleanup folder. |
+| P1 | b/0002 | Riccardo | Unimo student couldn't create a project in no-org due to existing org. |
+| P3 | b/0003 | Riccardo | Get feedback from Mirko and integrate it. |
+| P2 | b/0004 | Riccardo | Create a pre-work document for workshop participants, including repo forking and onramp creation. |
+| P1 | b/0005 | Riccardo | Move the workshop repository to a proper Google Codelab for improved structure, simplified setup, and streamlined experience. |

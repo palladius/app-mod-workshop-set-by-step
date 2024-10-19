@@ -35,11 +35,10 @@ I see two possible journeys to enjoy this workshop.
 
 ## License
 
-MIT just like original app.
+[MIT](https://github.com/palladius/app-mod-workshop-set-by-step/blob/main/LICENSE) - just like original app.
 
 ## thanks
 
 * :bowtie: [Gregorio Palamà](https://www.linkedin.com/in/gregorio-palam%C3%A0/) for inspiration and PHP code.
-* :bowtie: [Maurizio Ipsale](https://www.linkedin.com/in/maurizioipsale/) and
-  :bowtie: [Mirko Gilioli](https://www.linkedin.com/in/mirko-gilioli/) for having my workshop in GDG Modena.
+* :bowtie: [Maurizio Ipsale](https://www.linkedin.com/in/maurizioipsale/) and :bowtie: [Mirko Gilioli](https://www.linkedin.com/in/mirko-gilioli/) for having my workshop in GDG Modena.
 * :bowtie: [Giacomo Guiduzzi](https://www.linkedin.com/in/giacomo-guiduzzi/) (GH: :octopus: [giacomoguiduzzi](https://github.com/giacomoguiduzzi) ) for help with `Dockerfile` for PHP 5.
