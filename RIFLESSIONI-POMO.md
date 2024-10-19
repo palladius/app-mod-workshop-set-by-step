@@ -71,30 +71,12 @@ section 00 to provide more. We had to address this verbally to each one.
 
 ## Action items
 
-* `b/0001` [P2] Verify if you can do something different than Cloud SQL. We calculate Cloud SQL will last ~24h.
-     * Either teach them to configure Cloud Scheduler to turn off cloud sql `gcloud instances stop blah blah`
-     * or use Firebase
-     * or just tell them nicely (as I did) in some cleanup folder.
-* `b/0002` [P1] Big error Unimo student could NOT create a project in no-org since they had one org (!! I swear I tried 5 times)
-* `b/0003` [P3] Get feedback from Mirko and integrate here.
-* `b/0004` [p2] Riccardo create a pre-work document to hand over to Gregorio to give to workshop participants, so they come with the repo already forked, and maybe onramp already created.
-* `b/0005` [p1] Riccardo: move this repo to proper Google `Codelab`.
-     * **Positives**:
-          - Improved structure for the workshop git repository
-          - Simplified setup: include only the app folder with the code
-          - Streamlined experience: attendees can work directly without jumping back and forth
-     * **Negatives**: a git repo allows for PRs and I just merged two (one on README/PoMo and one on PHP 5.7 Dockerfile - wow! I';m humbled from such a great community!)
+Ricc - consider moving these bugs to Issues on GH, and maybe tag them as `postmortem-modena`.
 
-| Priority | Bug ID | Owner | Description |
-|---|---|---|---|
-| P2 | b/0001 | Riccardo | Verify if there's an alternative to Cloud SQL for a ~24h duration. Consider Cloud Scheduler, Firebase, or providing guidance in a cleanup folder. |
-| P1 | b/0002 | Riccardo | Unimo student couldn't create a project in no-org due to existing org. |
-| P3 | b/0003 | Riccardo | Get feedback from Mirko and integrate it. |
-| P2 | b/0004 | Riccardo | Create a pre-work document for workshop participants, including repo forking and onramp creation. |
-| P1 | b/0005 | Riccardo | Move the workshop repository to a proper Google Codelab for improved structure, simplified setup, and streamlined experience.
-
-     * **Positives**:
-          - Improved structure for the workshop git repository
-          - Simplified setup: include only the app folder with the code
-          - Streamlined experience: attendees can work directly without jumping back and forth
-     * **Negatives**: a git repo allows for PRs and I just merged two (one on README/PoMo and one on PHP 5.7 Dockerfile - wow! I';m humbled from such a great community!) |
+| Priority | Status | Bug ID | Owner | Description |
+|---|---|---|---|---|
+| P2 | In Progress | b/0001 | Riccardo | Verify if there's an alternative to Cloud SQL for a ~24h duration. Consider Cloud Scheduler, Firebase, or providing guidance in a cleanup folder. |
+| P1 | Blocked | b/0002 | Riccardo | Unimo student couldn't create a project in no-org due to existing org. |
+| P3 | Not Started | b/0003 | Riccardo | Get feedback from Mirko and integrate it. |
+| P2 | In Progress | b/0004 | Riccardo | Create a pre-work document for workshop participants, including repo forking and onramp creation. |
+| P1 | In Progress | b/0005 | Riccardo/Mirko | Move the workshop repository to a proper Google Codelab for improved structure, simplified setup, and streamlined experience (attendees can work directly without jumping back and forth). However, a git repo allows for PRs and I just merged two (one on README/PoMo and one on PHP 5.7 Dockerfile - wow! I'm humbled from such a great community!) |
