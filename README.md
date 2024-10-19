@@ -1,3 +1,10 @@
+<div style="float: right; width: 30%; margin-left: 10px;">
+<!-- Adjust width (30% or 50%) as needed -->
+
+![Fellini-Amarcord piu sottile](images/fellini-piu-sottile.png)
+
+</div>
+
 
 Self: https://github.com/palladius/app-mod-workshop-set-by-step
 
@@ -10,7 +17,6 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 
 * Navigate the `workshop-steps/` folder and scroll the READMEs in alpha order. Each folder has some contextual goodies.
 
-![Fellini-Amarcord piu sottile](images/fellini-piu-sottile.png)
 
 ## Prerequisites
 
