@@ -1,6 +1,8 @@
 This is a public "post-mortem" to capture what worked and what didnt in 12oct24 @ Modena DevFest  `PHP Amarcord` very first workshop.
 ## Modena Workshop PostMortem
+
 On Saturday 12 Oct 2024, Riccardo Carlesso drove a "PHP Amarcord" workshop in DevFest Modena, which seemed to be a success.
+
 ## Timeline
 ```bash
 # All times are in CE(S)T 🇮🇹. Date 2024-10-12
@@ -14,6 +16,7 @@ On Saturday 12 Oct 2024, Riccardo Carlesso drove a "PHP Amarcord" workshop in De
 * People had a 50/50 of Windows setup (they were then suggested to go use Cloud Shell).
 * Some of the people already have the GCP free trial credits, but they were expired
 * Some others were news to GCP and they had no previous experience.
+* One person filed a PR to contribute Dockerfile for PHP 5 build!
 
 ### Progress on workshop
 
@@ -41,14 +44,14 @@ correct billing account. We work around by tell them to create a brand new gmail
 
 ## PoMo :apple: 3 questions
 
-### What worked :happy:
+### What worked :grin:
 
 * [ricc] onramp worked beautifully. [Mirko -> I think the process can be improved in particular with the credit redemption]
 * [ricc] After 15 slides, people were able to actually do the work. I said "do your stuff and call me when blocked" and people were rarely blocked. Two people were able to easily cover 20 people.
 * [ricc] People loved having a **Gemini API Key** to use outside the workshop. People were thrilled to be able to use it independently from this workshop in the next 3 months.
 * [ricc] Having a double setup documented (Cloud Shell vs power mode (`vscode`, download `gcloud`, `mysql`, `docker`, ..) worked well. People chose naturally the best for them. They oved cloud shell, but the UX was indeed clumsier to open/edit files.
 
-### What didn't work  :unhappy:
+### What didn't work  :weary:
 
 * [maurizio] Lack of workshop introduction. There were no clear explanations of the goal and the context. We need to improve the
 section 00 to provide more. We had to address this verbally to each one.

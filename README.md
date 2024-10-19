@@ -39,7 +39,7 @@ MIT just like original app.
 
 ## thanks
 
-* [Gregorio palamà](https://www.linkedin.com/in/gregorio-palam%C3%A0/) for inspiration and PHP code.
-* [Maurizio Ipsale](https://www.linkedin.com/in/maurizioipsale/) and
-  [Mirko Gilioli](https://www.linkedin.com/in/mirko-gilioli/) for having my workshop in GDG Modena.
-* @giacomoguiduzzi (or giacomoguiduzzi@ ?) for help with `Dockerfile` for PHP 5.
+* :bowtie: [Gregorio Palamà](https://www.linkedin.com/in/gregorio-palam%C3%A0/) for inspiration and PHP code.
+* :bowtie: [Maurizio Ipsale](https://www.linkedin.com/in/maurizioipsale/) and
+  :bowtie: [Mirko Gilioli](https://www.linkedin.com/in/mirko-gilioli/) for having my workshop in GDG Modena.
+* :bowtie: [Giacomo Guiduzzi](https://www.linkedin.com/in/giacomo-guiduzzi/) (GH: :octopus: [giacomoguiduzzi](https://github.com/giacomoguiduzzi) ) for help with `Dockerfile` for PHP 5.
