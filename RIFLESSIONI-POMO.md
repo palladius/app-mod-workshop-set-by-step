@@ -54,10 +54,7 @@ correct billing account. We work around by tell them to create a brand new gmail
 section 00 to provide more. We had to address this verbally to each one.
 * [ricc] A student used the `UniMo.it` account and could NOT reclaim BAID with that email. Luckily he could unblock by getting a second account on onramp with his gmail.
 * [ricc] People were confused on two repos - one with the PHP code, one with the `.env`. "Where is the .env?" came up 3 times. Make it clear, maybe add a slide.
-* [maurizio] We need to migrate the workshop to a better platform (codelabs is currently under investigation by MM/Ricc). Benefits include:
-  - Improved structure for the workshop git repository
-  - Simplified setup: include only the app folder with the code
-  - Streamlined experience: attendees can work directly without jumping back and forth
+* [maurizio] We need to migrate the workshop to a better platform (codelabs is currently under investigation by MM/Ricc). See AIs below.
 * [maurizio] Develop a detailed migration plan with timeline, resource requirements, and specific platform recommendations.
 * [ricc] Very noisy room, I had to shout at people 5m from me and asked people 15m from me to come closer. This was a one-off issue (multi speaker space) - never happened before.
 * [maurizio] Some people were facing issues while pulling the app repo using ssh. We overcome with git clone <https://github.com/REPO- NAME>
@@ -78,3 +75,9 @@ section 00 to provide more. We had to address this verbally to each one.
 * `b/0003` [P3] Get feedback from Mirko and integrate here.
 * `b/0004` [p2] Riccardo create a pre-work document to hand over to Gregorio to give to workshop participants, so they come with the repo already forked, and maybe onramp already created.
 * `b/0005` [p1] Riccardo: move this repo to proper Google `Codelab`.
+     * **Positives**:
+          - Improved structure for the workshop git repository
+          - Simplified setup: include only the app folder with the code
+          - Streamlined experience: attendees can work directly without jumping back and forth
+     * **Negatives**: a git repo allows for PRs and I just merged two (one on README/PoMo and one on PHP 5.7 Dockerfile - wow! I';m humbled from such a great community!)
+
