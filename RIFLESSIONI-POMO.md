@@ -41,9 +41,12 @@ correct billing account. We work around by tell them to create a brand new gmail
 * Lack of workshop introduction. There were no clear explanations of the goal and the context. We need to improve the
 section 00 to provide more. We had to address this verbally to each one.
 * A student used the `UniMo.it` account and could NOT reclaim BAID with that email. Luckily he could unblock by getting a second account on onramp with his gmail.
-* People were confused on two repos - one with the PHP code, one with the `.env`. "Where is the .env?" came up 3 times. Make it clear, maybe add a slide. We need to migrate the workshop to a better platform (codelabs is currently under
-investigation by MM). This would leave the workshop git with a better structure. I'd include only the app folder with the
-code so attendees can work straight on it without jumping back and forward.
+* People were confused on two repos - one with the PHP code, one with the `.env`. "Where is the .env?" came up 3 times. Make it clear, maybe add a slide.
+* We need to migrate the workshop to a better platform (codelabs is currently under investigation by MM). Benefits include:
+  - Improved structure for the workshop git repository
+  - Simplified setup: include only the app folder with the code
+  - Streamlined experience: attendees can work directly without jumping back and forth
+* Develop a detailed migration plan with timeline, resource requirements, and specific platform recommendations.
 * Very noisy room, I had to shout at people 5m from me and asked people 15m from me to come closer. This was a one-off issue (multi speaker space) - never happened before.
 * Some people were facing issues while pulling the app repo using ssh. We overcome with git clone <https://github.com/REPO- NAME>
 ### Where we were lucky
