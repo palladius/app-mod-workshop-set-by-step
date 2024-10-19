@@ -91,4 +91,10 @@ section 00 to provide more. We had to address this verbally to each one.
 | P1 | b/0002 | Riccardo | Unimo student couldn't create a project in no-org due to existing org. |
 | P3 | b/0003 | Riccardo | Get feedback from Mirko and integrate it. |
 | P2 | b/0004 | Riccardo | Create a pre-work document for workshop participants, including repo forking and onramp creation. |
-| P1 | b/0005 | Riccardo | Move the workshop repository to a proper Google Codelab for improved structure, simplified setup, and streamlined experience. |
+| P1 | b/0005 | Riccardo | Move the workshop repository to a proper Google Codelab for improved structure, simplified setup, and streamlined experience.
+
+     * **Positives**:
+          - Improved structure for the workshop git repository
+          - Simplified setup: include only the app folder with the code
+          - Streamlined experience: attendees can work directly without jumping back and forth
+     * **Negatives**: a git repo allows for PRs and I just merged two (one on README/PoMo and one on PHP 5.7 Dockerfile - wow! I';m humbled from such a great community!) |
