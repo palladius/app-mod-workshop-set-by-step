@@ -49,4 +49,9 @@ I see two possible journeys to enjoy this workshop.
 * :bowtie: [Maurizio Ipsale](https://www.linkedin.com/in/maurizioipsale/) and :bowtie: [Mirko Gilioli](https://www.linkedin.com/in/mirko-gilioli/) for having my workshop in GDG Modena.
 * :bowtie: [Giacomo Guiduzzi](https://www.linkedin.com/in/giacomo-guiduzzi/) (GH: :octopus: [giacomoguiduzzi](https://github.com/giacomoguiduzzi) ) for help with `Dockerfile` for PHP 5.
 
+
+<div style="float: center; width: 50%; margin: 0 auto;">
+
 ![Image](images/php-amarcord.png)
+
+</div>
