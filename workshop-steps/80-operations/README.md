@@ -68,5 +68,7 @@ Bingo!
 
 ## Final result
 
-We can consider this exercise finished once you have a working SLI, SLO and alerting for your availablity,
+We can consider this exercise finished once you have 1 working SLO + 2x alerts for your availability,
 and it's alerting to your email and to your phone.
+
+If you want you can add a Latency or a more complex one.
