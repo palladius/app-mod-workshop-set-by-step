@@ -17,6 +17,7 @@ With Buildpacks the app gets built automagically. Unfortunately you don't have f
 * Install `pack`: https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/
 * buildpacks in PHP: https://cloud.google.com/docs/buildpacks/php (where it tells you how to set up the PHP version)
 * Try something like `pack build --builder=gcr.io/buildpacks/builder my-app-with-buildpacks`
+* (🐛) - it looks buildpacks doesn't work well with php 7.4, many trials failed, even changing the builders from google to paketo to haroku
 
 ## Docker (more control)
 
