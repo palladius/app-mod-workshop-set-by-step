@@ -61,3 +61,8 @@ You might also have to enable **EventArc APIs**.
 2. Another comment from UI for GCF permissioning is this:
 
 ![WARNING - You must assign the Invoker role (roles/run.invoker) through Cloud Run](image-1.png)
+
+3. The logs could say: "'Memory limit of 244 MiB exceeded with 270 MiB used. Consider increasing the memory limit, see https://cloud.google.com/functions/docs/configuring/memory'". Again, add RAM to your GCF.
+Here's a poissible bump:
+
+![memory and CPu bump](image-2.png)
