@@ -42,3 +42,23 @@ A possible code:
 ```python
 TODO(ricc): wuando va
 ```
+
+## Dritte per Maurizio.
+
+
+Allora Maurizio qualche dritta:
+
+Tutto il codice e' nel mio repo app personale. In pratica devi fare 3 cose
+
+1. update SQL x colonna descrizione - gia emsso di sopra
+2. GCs setup - nello step 60.
+3. GCF setup
+
+## GCF Setup - da migliorare
+
+1. La funzione e' tutta dentro `main.py`. PEr testarla - ci e' voluto un po - ho creato test.py ma a te non serve, copincolla solo la main e il `requirements.txt` ovviamente e ARA tutto il resto. https://github.com/Friends-of-Ricc/app-mod-workshop/blob/main/gcf/main.py
+
+2. La funzione di push e' una chicca, richiede un vallo di ENV var (le 4 sorelle perche quel cavolo di pymysql non support il singolo URLone come fa SQLAlchemy. Questo per dire  che sei in tempo ancora a splendere e fare porting su SQLAlchemy cosi ce la caviamno con una ENV sola.) https://github.com/Friends-of-Ricc/app-mod-workshop/blob/main/gcf/push-to-gcf.sh
+
+Secondo me con questi due file vai come un filo d'olio.
+
