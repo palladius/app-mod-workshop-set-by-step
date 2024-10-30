@@ -61,3 +61,7 @@ If it works, the editing the new Cloud Run revision should show you something li
 ![Cloud Run succesfully added Volume mount from GCS](image.png)
 
 If you have also a PROD instance, you can also run the same script for the prod `SERVICE_NAME`. **Note** this only works if dev and prod hit on the same DB. If you have two different DB confs for dev and prod (and you should!), then you should also have TWO buckets, and prod should mount the second bucket. This is a great follow up exercise.
+
+the images should flow seamlessly on GCS without writing a single line of PHP:
+
+![GCS bucket sample images](image-1.png)
