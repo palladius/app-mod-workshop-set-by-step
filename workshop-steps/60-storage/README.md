@@ -37,8 +37,8 @@ Please read the FUSE fine print. This is NOT ok if performance is an issue.
 ```
 # Uploads folder within your docker container
 MOUNT_PATH='/var/www/html/uploads/'
-# Your Cloud Run Service Name
-SERVICE_NAME='my-php-amarcord-on-cloudrun'
+# Your Cloud Run Service Name, eg php-amarcord-dev
+SERVICE_NAME='php-amarcord-dev'
 BUCKET="${PROJECT_ID}-public-images"
 GS_BUCKET="gs://${BUCKET}"
 
@@ -54,6 +54,10 @@ gcloud --project "$PROJECT_ID" beta run services update "$SERVICE_NAME" \
     --execution-environment gen2 \
     --add-volume=name=php_uploads,type=cloud-storage,bucket="$BUCKET"  \
     --add-volume-mount=volume=php_uploads,mount-path="$MOUNT_PATH"
-
-
 ```
+
+If it works, the editing the new Cloud Run revision should show you something like this:
+
+![Cloud Run succesfully added Volume mount from GCS](image.png)
+
+If you have also a PROD instance, you can also run the same script for the prod `SERVICE_NAME`. **Note** this only works if dev and prod hit on the same DB. If you have two different DB confs for dev and prod (and you should!), then you should also have TWO buckets, and prod should mount the second bucket. This is a great follow up exercise.
