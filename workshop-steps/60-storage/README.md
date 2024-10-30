@@ -10,7 +10,7 @@ How do we fix it? there are a number of approaches.
 
 1. Migrate your Cloud Run app to a storage-friendly solution: [GCE + Persistent disk](https://cloud.google.com/persistent-disk?hl=en)? Maybe [GKE + Storage](https://cloud.google.com/kubernetes-engine/docs/concepts/storage-overview)?
 
-1. Move to [GCS](https://cloud.google.com/storage?hl=it). Google Cloud Storage offers best in class Storage for the whole of Google Cloud and it's the most Cloud idiomatic solution. However, it requires us with getting dirty with PHP libraries. Do we have [PHP 5.7 libraries for GCS](https://cloud.google.com/php/docs/reference/cloud-storage/latest)? Does `PHP 5.7` even support Composer?
+1. Move to [GCS](https://cloud.google.com/storage?hl=it). Google Cloud Storage offers best in class Storage for the whole of Google Cloud and it's the most Cloud idiomatic solution. However, it requires us with getting dirty with [PHP libraries](https://github.com/googleapis/google-cloud-php). Do we have [PHP 5.7 libraries for GCS](https://cloud.google.com/php/docs/reference/cloud-storage/latest)? Does `PHP 5.7` even support `Composer` (seems like [PHP 5.3.2 is the earliest version](https://getcomposer.org/doc/00-intro.md) supported by Composer)?
 
 1. Or maybe use GCS [Cloud Run Volume Mounts](https://cloud.google.com/blog/products/serverless/introducing-cloud-run-volume-mounts).
 
