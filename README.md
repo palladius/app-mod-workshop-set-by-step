@@ -17,6 +17,9 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 
 * Navigate the `workshop-steps/` folder and scroll the READMEs in alpha order. Each folder has some contextual goodies.
 
+## Architecture
+
+![Architecture diagram](architecture.png)
 
 ## Prerequisites
 
@@ -43,7 +46,7 @@ I see two possible journeys to enjoy this workshop.
 
 [MIT](https://github.com/palladius/app-mod-workshop-set-by-step/blob/main/LICENSE) - just like original app.
 
-## thanks
+## Thanks
 
 * :bowtie: [Gregorio Palamà](https://www.linkedin.com/in/gregorio-palam%C3%A0/) for inspiration and PHP code.
 * :bowtie: [Maurizio Ipsale](https://www.linkedin.com/in/maurizioipsale/) and :bowtie: [Mirko Gilioli](https://www.linkedin.com/in/mirko-gilioli/) for having my workshop in GDG Modena.
