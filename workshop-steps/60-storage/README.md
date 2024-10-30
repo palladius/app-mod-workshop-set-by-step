@@ -25,3 +25,35 @@ I don't want to tell you the solution, but I want this to happen:
 1. You upload `newpic.jpg`. You see it in the app.
 2. You upgrade the app to a new version.
 3. `newpic.jpg` is still there, visible.
+
+## Possible solution
+
+This should allow you to mount a folder from Cloud Run to GCS, so:
+1. all uploads to GCS will actually be visible in your app
+1. all uploads to your app will actually be uploaded to GCS
+
+Please read the FUSE fine print. This is NOT ok if performance is an issue.
+
+```
+# Uploads folder within your docker container
+MOUNT_PATH='/var/www/html/uploads/'
+# Your Cloud Run Service Name
+SERVICE_NAME='my-php-amarcord-on-cloudrun'
+BUCKET="${PROJECT_ID}-public-images"
+GS_BUCKET="gs://${BUCKET}"
+
+# Create bucket
+gsutil mb -l "$GCP_REGION" -p "$PROJECT_ID" "$GS_BUCKET/"
+
+# Copy original pictures there - better if you add an image of YOURS before.
+gsutil cp ./uploads/*.png "$GS_BUCKET/"
+
+# Inject a volume mount to your GCS bucket in the right folder.
+gcloud --project "$PROJECT_ID" beta run services update "$SERVICE_NAME" \
+    --region $GCP_REGION \
+    --execution-environment gen2 \
+    --add-volume=name=php_uploads,type=cloud-storage,bucket="$BUCKET"  \
+    --add-volume-mount=volume=php_uploads,mount-path="$MOUNT_PATH"
+
+
+```
