@@ -21,6 +21,17 @@ ALTER TABLE images
 ADD COLUMN description TEXT;
 ```
 
+![Running SQL comfortably in the UI](image-1.png)
+
+And bingo! Try now to check if it worked:
+
+```sql
+SELECT * FROM images;
+```
+
+You should see the new description column:
+
+![Showing it works!](image-2.png)
 
 ## Write the Gemini GCF
 
