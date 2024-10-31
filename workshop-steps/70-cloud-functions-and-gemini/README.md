@@ -134,7 +134,7 @@ def generate_caption(event, context):
 set -euo pipefail
 
 echo Sourcing .env..
-# source ../.env ||  fatal 2
+# source ../.env || exit 2
 
 .  ~/git/app-mod-workshop-set-by-step/.env
 
@@ -152,10 +152,49 @@ echodo gcloud --project "$PROJECT_ID" functions deploy php_amarcord_generate_cap
 ```
 ## Testing the function
 
+### Unit Tests
+
 The function has many moving parts. You might want to be able to test all the single ones.
 
 An example is in [gcf/test.py](https://github.com/Friends-of-Ricc/app-mod-workshop/blob/main/gcf/test.py).
 
+### Cloud Functions UI
+
+Also take some time to explore your function on the UI. Every tab is worth exploring, particularly the `Source` (my favourite), `Variables`, `Trigger`, and `Logs`; You'll spend a lot of time in the `Logs` to troubleshoots errors (also see possible errors on the bottom of this page). also make sure to check `Permissions`.
+
+![Cloud Functions Source detail](image-3.png)
+
+### E2E Test
+
+Time to manually test the function!
+
+1. Go to your app, and login
+2. Upload a picture (not too big, we've seen issues with big images)
+3. check on UI the picture is uploaded.
+4. Check on **Cloud SQL Studio** that the description has been updated. Login and run this query: `SELECT * FROM images`.
+
+![Prove that the GCF works](image-4.png)
+
+And it works! We might also want to update the frontend to show that description.
+
+## Update PHP to show [optional]
+
+We have proven the app works. However, it would be nice that the users could also see that description.
+
+We don't need to be PHP experts to add the description to the `index.php`. This code should do (yes, Gemini wrote it for me!):
+
+```php
+
+    <?php if (!empty($image['description'])): ?>
+        <p class="font-bold">Gemini Caption:</p>
+        <p class="italic"><?php echo $image['description']; ?></p>
+    <?php endif; ?>
+
+```
+
+In the next steps we also see a prettier UI version, thanks to Gemini Code Assist. A pretty version might look like this:
+
+![prettified PHP page with caption](image-5.png)
 
 ## Conclusions
 
