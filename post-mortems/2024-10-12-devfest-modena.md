@@ -1,4 +1,5 @@
 This is a public "post-mortem" to capture what worked and what didnt in 12oct24 @ Modena DevFest  `PHP Amarcord` very first workshop.
+
 ## Modena Workshop PostMortem
 
 On Saturday 12 Oct 2024, Riccardo Carlesso drove a "PHP Amarcord" workshop in DevFest Modena, which seemed to be a success.
