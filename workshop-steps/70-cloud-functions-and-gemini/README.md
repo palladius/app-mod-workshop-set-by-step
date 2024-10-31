@@ -194,8 +194,13 @@ We don't need to be PHP experts to add the description to the `index.php`. This 
 
 In the next steps we also see a prettier UI version, thanks to Gemini Code Assist. A pretty version might look like this:
 
-![prettified PHP page with caption](image-5.png)
+![Ugly version (no CSS) with Gemini description](image-6.png)
 
+<!--
+
+Avoid this for now. ![prettified PHP page with caption](image-5.png)
+
+-->
 ## Conclusions
 
 You got a Cloud Function triggered on new objects landing on GCS which is able to annotate the content of the image like a human could do, and auttomatically update the DB. Wow!
@@ -204,10 +209,21 @@ What's next? You could follow the same reasoning to achieve two great functional
 
 ### [optional] Add further Cloud Functions [open ended]
 
-1. An email trigger which sends you an email every time someone sends a picture.
-    * Too often? Add a further constraint: A BIG picture, or a picture whose Gemini content contains the words "nude/nudity/violent".
+A couple of additional features come to mind.
 
-1. Currently a human admin is flagging images for "inappropriate". How about having Gemini doing the heavy lifting? Add a test to flag inappropriate trigger content and update the DB as we learnt in the previous function. This means basically taking the previous function, changing the prompt, and updating the DB based on the answer. The only caveat is: make sure the "creative output" from Gemini is put on rails. You might ask a deterministic answer like a confidence score from 0 to 1, a JSON, .. You can achieve this in many ways, for example:
+#### Email Trigger
+
+An **email trigger** which sends you an email every time someone sends a picture.
+
+* Too often? Add a further constraint: A BIG picture, or a picture whose Gemini content contains the words "nude/nudity/violent".
+* Consider checking `EventArc` for this.
+
+
+#### Auto-moderate inappropriate pics
+
+Currently a human admin is flagging images for "inappropriate". How about having Gemini doing the heavy lifting and moderating the space? Add a test to flag inappropriate trigger content and update the DB as we learnt in the previous function. This means basically taking the previous function, changing the prompt, and updating the DB based on the answer.
+
+**Caveat**. Generative AI has unpredictable outputs. Make sure the "creative output" from Gemini is put "on rails". You might ask a deterministic answer like a confidence score from 0 to 1, a JSON, .. You can achieve this in many ways, for example:
     * Using python libraries `pydantic`, `langchain`, ..
     * Use [Gemini Structured Output](https://ai.google.dev/gemini-api/docs/structured-output).
 
@@ -228,6 +244,8 @@ You could add in the prompt additional fields to get insights like: is there som
 * `bads`: "It looks like unhealthy food"
 * `OCR`: "Da consumare preferibilmente prima del 10 Novembre 2024"
 * `location`: "Pescara, Lungomare"
+
+While it's usually better to have *N* function for *N* outcomes, it's incredibly rewarding to do one which does 10 things. Check this [article by Riccardo](https://medium.com/devops-dev/parse-medium-articles-with-genai-and-add-some-fun-02fe9d30475a) to see how.
 
 # Possible errors (mostly IAM / permissions)
 
