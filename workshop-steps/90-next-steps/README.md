@@ -32,7 +32,15 @@ Here's the code:
 
 You can easily get this in less than 5 minutes, one Cloud Build away! :)
 
+The response from Gemini was perfect (meaning, I didnt have to change a thing):
+
+![Gemini Advanced response](image-1.png)
+
+And here's the new layout in Riccardo personal app:
+
 ![Gemini helped Riccardo with Tailwind](image.png)
+
+Note: the code is pasted as image as we aren't here in the HTML/CSS business. The point is, Gemini can change the code for you and you're left with very minor changes.
 
 ## Security
 
