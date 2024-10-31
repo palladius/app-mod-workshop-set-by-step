@@ -24,7 +24,9 @@ Google Cloud supports multiple paradigms to achieve this. Most notably:
 * **[Cloud Run Functions](https://cloud.google.com/functions)** (familiarly known as `lambdas`).
 * [Cloud Composer](https://cloud.google.com/composer/docs/concepts/overview). Basically Google version of [Apache Airflow](https://airflow.apache.org/), also great for [DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)s.
 
-In this exercise, we'll delve into Cloud Function to achieve a quite spectacular result. And we will provide an optional add-on for you.
+In this exercise, we'll delve into Cloud Function to achieve a quite spectacular result. And we will provide optional exercises for you.
+
+Note that sample code is provided under `.solutions/`.
 
 ## Set up a Cloud function (🐍 python)
 
@@ -157,7 +159,8 @@ What's next? You could follow the same reasoning to achieve two great functional
 
 ### [optional] Add further Cloud Functions [open ended]
 
-1. An email trigger which sends you an email every time someone sends a picture. Or a BIG picture. Or a picture whose content contains "nude/nudity".
+1. An email trigger which sends you an email every time someone sends a picture.
+    * Too often? Add a further constraint: A BIG picture, or a picture whose Gemini content contains the words "nude/nudity/violent".
 
 1. Currently a human admin is flagging images for "inappropriate". How about having Gemini doing the heavy lifting? Add a test to flag inappropriate trigger content and update the DB as we learnt in the previous function. This means basically taking the previous function, changing the prompt, and updating the DB based on the answer. The only caveat is: make sure the "creative output" from Gemini is put on rails. You might ask a deterministic answer like a confidence score from 0 to 1, a JSON, .. You can achieve this in many ways, for example:
     * Using python libraries `pydantic`, `langchain`, ..
