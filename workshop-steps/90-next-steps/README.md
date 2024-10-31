@@ -3,16 +3,15 @@ You've completed EVERYTHING, what's missing?
 
 Some food for thought:
 
-## Uploads to GCS
+## Play with Gemini
 
-This is a complex migration: you want
+You can use Gemini in two flavours:
 
-* Use PHP to send uploads to a GCS bucket.
-* set up a secure Service Account that does that.
-* enabled public bucket (for simplicity, or you can set up a more complex signed URL).
-* pull/visualize images from the bucket.
+1. The "Enterprise way", intertwined with your GCP, which we've explored in chapter 7 (GCF+Gemini). All authentication magically works, and services beautifully interconnect.
 
-To achieve this, you need to install PHP GCP libraries to access GCS.
+2. The "Consumer way". You get a Gemini API Key from [here](https://ai.google.dev/gemini-api/docs/api-key) and start building little scripts which can be tied onto any workload you already have (proprietary work, other clouds, localhost, ..). You just substitute your API key and the code starts magically to work.
+
+We encourage you to try exploring the (2) with your own pet projects.
 
 ## UI Lifting
 
