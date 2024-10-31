@@ -1,0 +1,10 @@
+google-cloud-storage
+google-cloud-aiplatform
+pymysql
+# Gemini dice -> da verificare
+#google-cloud-storage==2.8.0  # Replace with the desired version
+#google-cloud-aiplatform==1.31.0  # Replace with the desired version
+
+
+# FOR TEST
+#ipdb

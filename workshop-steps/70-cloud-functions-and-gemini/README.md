@@ -146,7 +146,7 @@ echodo gcloud --project "$PROJECT_ID" functions deploy php_amarcord_generate_cap
 
 The function has many moving parts. You might want to be able to test all the single ones.
 
-An example is [here](https://github.com/Friends-of-Ricc/app-mod-workshop/blob/main/gcf/test.py).
+An example is in [gcf/test.py](https://github.com/Friends-of-Ricc/app-mod-workshop/blob/main/gcf/test.py).
 
 
 ## Conclusions
