@@ -21,7 +21,7 @@ This workshop will be run by Googlers who will provide some entrypoint to GCP (e
 
 Architecture has been developed with a proprietary tool (sorry) but the Graphciz-like source code is still in the `architecture/` folder if you care about it:
 
-![Architecture diagram v1.2a](architecture/PHP Amarcord - architecture.png)
+![Architecture diagram v1.2a](architecture/PHP%20Amarcord%20-%20architecture.png)
 
 ## Prerequisites
 
