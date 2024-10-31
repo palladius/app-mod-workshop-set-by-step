@@ -1,13 +1,19 @@
+Now you have an awesome modernized, shiny new PHP app (like a 2024 `Fiat 126`) with Cloudified storage.
+
+What can you do with it?
+
 ## Prerequisites
 
 In the previous chapter, a model solution allowed us to mount images `/uploads/` on GCS, *de facto* separating the App logic from the image storage.
 
 This exercise requires you to:
 
-* Have successfully completed excericse in chapter 6 (storage).
+* Have successfully completed exercise in chapter 6 (storage).
 * Have a GCS bucket with the image uploads, where people upload pictures on your app and pictures flow to your bucket.
 
 ## Set up a Cloud function (in python)
+
+**Note**. This function can be written in ANY language you want! Please do write in in your favorite language. We provide a solution in python because it's widely utilized. Please file a PR or reach out to the author with a PR or link to your solution. I really mean it. I'm working on getting a little prize for good contributors.
 
 Have you ever wondered how to implement an **event-driven application**? Something like:
 
@@ -166,9 +172,40 @@ What's next? You could follow the same reasoning to achieve two great functional
     * Using python libraries `pydantic`, `langchain`, ..
     * Use [Gemini Structured Output](https://ai.google.dev/gemini-api/docs/structured-output).
 
+**Tip**. You could have MULTIPLE functions or have a single prompt which enforces a JSON answer (works greta with "Gemini Structured Output"as highlighted above) like:
 
-# Possible errors
+What would the prompt be to generate this?
+
+```JSON
+{
+    "description": "This is the picture of an arrosticino",
+    "suitable": TRUE
+}
+```
+
+You could add in the prompt additional fields to get insights like: is there something good about it? Bad about it? Do you recognize the place? Is there some text (OCR has never been easier):
+
+* `goods`: "It looks like yummie food"
+* `bads`: "It looks like unhealthy food"
+* `OCR`: "Da consumare preferibilmente prima del 10 Novembre 2024"
+* `location`: "Pescara, Lungomare"
+
+# Possible errors (mostly IAM / permissions)
 
 The first I've developed this solution I came onto some IAM permission issues. I will add them here for empathy and to give some ideas on how to fix them.
 
+1. Note that for deploying a GCF function which listens to a GCS bucket you need to set up proper permissions to the Service Account you are using for the job, as in figure:
 
+![IAM issues to grant a SA permissions for your function and Bucket](srvc-acct-for-trigger.png)
+
+You might also have to enable **EventArc APIs**.
+
+2. Another comment from UI for GCF permissioning is this ([Cloud run Invoker role](https://cloud.google.com/run/docs/reference/iam/roles)):
+
+![WARNING - You must assign the Invoker role (roles/run.invoker) through Cloud Run](error-invoker.png)
+
+3. The first time I ran it, my logs could said: "'Memory limit of 244 MiB exceeded with 270 MiB used. Consider increasing the memory limit, see https://cloud.google.com/functions/docs/configuring/memory'". Again, add RAM to your GCF. This is super easy to do in the UI. Here's a possible bump:
+
+![memory and CPU bump](image-2.png)
+
+Alternatively, you can also fix your Cloud run deployment script to bump MEM/CPU. This takes a bit longer.
