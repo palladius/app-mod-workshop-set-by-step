@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# This script is JUST testing that  your Gemini API key works.
+
 set -euo pipefail
 
 # Change your API here

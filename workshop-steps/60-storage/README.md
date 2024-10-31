@@ -63,7 +63,7 @@ gsutil mb -l "$GCP_REGION" -p "$PROJECT_ID" "$GS_BUCKET/"
 gsutil cp ./uploads/*.png "$GS_BUCKET/"
 ```
 
-### Configure CLoud Run to mount the bucket in the /uploads/ folder
+### Configure Cloud Run to mount the bucket in the /uploads/ folder
 
 Now let's come to the elegant part. We create a volume `php_uploads` and instruct Cloud Run
 to do a FUSE mount on `MOUNT_PATH` (something like `/var/www/html/uploads/`):
@@ -103,3 +103,5 @@ A new, modernized stack allows us to have all the images/pictures in our app com
 * Want to send an email every time an image with "dangerous" or "nude" comes in? You can do that without touching the PHP code.
 
 * Want to use a Gemini Multimodal model every time an image comes in to describe it, and upload the DB with its description? You can do that without touching the PHP code. You don't believe me? Keep reading on in chapter 7.
+
+We've just unlocked a big space of opportunity here, and that's just because 👨‍🏫 Wietse is my Cloud Run mentor.
