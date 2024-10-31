@@ -22,20 +22,3 @@ What to do:
 * [Gemini and PHP](https://github.com/gemini-api-php/client) - not sure if `composer require gemini-api-php/client` will work with PHP 5.7. Welcome to 1955, Mertin!
 * [PHP library for cloud-ai-platform](https://cloud.google.com/php/docs/reference/cloud-ai-platform/latest).
 
-
-## Possible troubles (IAM / permissions)
-
-1. Note that for deploying a GCF function which listens to a GCS bucket you need to set up proper permissions to the Service Account, as in figure:
-
-![IAM issues to grant a SA permissions for your function and Bucket](srvc-acct-for-trigger.png)
-
-You might also have to enable **EventArc APIs**.
-
-2. Another comment from UI for GCF permissioning is this:
-
-![WARNING - You must assign the Invoker role (roles/run.invoker) through Cloud Run](error-invoker.png)
-
-3. The logs could say: "'Memory limit of 244 MiB exceeded with 270 MiB used. Consider increasing the memory limit, see https://cloud.google.com/functions/docs/configuring/memory'". Again, add RAM to your GCF.
-Here's a poissible bump:
-
-![memory and CPU bump](image-2.png)
