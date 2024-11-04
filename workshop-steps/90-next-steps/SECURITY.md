@@ -31,3 +31,12 @@ Possible solutions:
 
 Note: some info is already in the 01 README.
 
+## App Hardening
+
+The app is currently vulnerable to Code Injection as beautifully demonstrated by Davide Guerri who reached out to me
+offering my personal `DB_PASS`.
+
+You can upload a PHP file which allows generic PHP code execution. This is dangerous!
+
+A fix is here: https://github.com/Friends-of-Ricc/app-mod-workshop/pull/2
+
