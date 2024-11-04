@@ -11,6 +11,9 @@ echo "Pushing ☁️ f(x)☁ to 🪣 $GS_BUCKET, along with DB config.. (DB_PASS
 
 # Note. The source is '.'. You might have to adjust if you call the push script
 #       from a different place
+# Note. I've seen this script fail when $DB_PASS would have a number of non-alphabetical characters, like \ : ; and so on.
+#       Consider minimizing them.
+#
 gcloud --project "$PROJECT_ID" functions deploy php_amarcord_generate_caption \
     --runtime python310 \
     --region "$GCP_REGION" \
@@ -20,3 +23,6 @@ gcloud --project "$PROJECT_ID" functions deploy php_amarcord_generate_caption \
     --source . \
     --entry-point generate_caption \
     --gen2
+
+# Memento!!!
+# TODO(ricc): Still need to add bigger memory limits, like 512 RAM after this.
