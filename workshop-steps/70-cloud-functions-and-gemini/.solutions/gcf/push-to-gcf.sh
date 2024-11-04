@@ -11,7 +11,7 @@ echo "Pushing ☁️ f(x)☁ to 🪣 $GS_BUCKET, along with DB config.. (DB_PASS
 
 # Note. The source is '.'. You might have to adjust if you call the push script
 #       from a different place
-echodo gcloud --project "$PROJECT_ID" functions deploy php_amarcord_generate_caption \
+gcloud --project "$PROJECT_ID" functions deploy php_amarcord_generate_caption \
     --runtime python310 \
     --region "$GCP_REGION" \
     --trigger-event google.cloud.storage.object.v1.finalized \
