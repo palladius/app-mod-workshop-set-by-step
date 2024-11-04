@@ -21,8 +21,8 @@ import pymysql.cursors
 
 
 # Replace with your project ID
-PROJECT_ID = "your-project-id"
-GEMINI_MODEL = "gemini-1.5-pro"
+PROJECT_ID = "YOUR_PROJECT_ID"
+GEMINI_MODEL = "gemini-1.5-flash"
 DEFAULT_PROMPT = "Generate a caption for this image: "
 
 def gemini_describe_image_from_gcs(gcs_url, image_prompt=DEFAULT_PROMPT):
