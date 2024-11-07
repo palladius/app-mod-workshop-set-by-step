@@ -39,7 +39,7 @@ The app is currently vulnerable to Code Injection as beautifully demonstrated by
 
 You can upload a PHP file which allows generic PHP code execution. This is dangerous!
 
-A fix is here: https://github.com/Friends-of-Ricc/app-mod-workshop/pull/2
+A possible fix is here: https://github.com/Friends-of-Ricc/app-mod-workshop/pull/2
 
 Another way is to ask Gemini! you can try these simple steps:
 
@@ -55,8 +55,8 @@ Paste the code of `upload.php` here..
 
 ```
 
-Gemini identified some viulnerabilities (Missing File Extension Validation, Missing File Extension Validation, Unrestricted File Name, ..) and also proposed a good solution fixing filename, random id, and so on.
+Gemini identified some vulnerabilities (Missing File Extension Validation, Missing File Extension Validation, Unrestricted File Name, ..) and also proposed a good solution fixing filename, random id, and so on.
 
 ![sample Gemini code](image-2.png)
 
-Another futuristic solution might be to change the code in module 7 to have a Cloud function which inspects the content, decides if it's good or bad, and based on this 50/50 output puts the image under a locked down `quarantine/` folder with `700` permissions. If you don't want to be vulnerable for these 4-5 seconds for the GCF to run and decide, you could even refactor the code to move the image to `/accepted/` vs `/quarantined/`, de facto guaranteeing that an image is visulized only after the AI has accepted it.
+Another futuristic solution might be to change the code in module 7 to have a Cloud function which inspects the content, decides if it's good or bad, and based on this 50/50 output puts the image under a locked down `quarantine/` folder with `700` permissions. If you don't want to be vulnerable for these 4-5 seconds for the GCF to run and decide, you could even refactor the code to move the image to `/accepted/` vs `/quarantined/`, de facto guaranteeing that an image is visualized only after the AI has accepted it.
