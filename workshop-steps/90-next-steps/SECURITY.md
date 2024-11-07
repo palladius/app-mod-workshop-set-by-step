@@ -63,4 +63,4 @@ Security code reviews can even be automated, having workflows sending PRs to fix
 
 Another futuristic solution might be to change the code in module 7 to have a Cloud function which inspects the content, decides if it's good or bad, and based on this 50/50 output puts the image under a locked down `quarantine/` folder with `700` permissions. If you don't want to be vulnerable for these 4-5 seconds for the GCF to run and decide, you could even refactor the code to move the image to `/accepted/` vs `/quarantined/`, de facto guaranteeing that an image is visualized only after the AI has accepted it.
 
-Scanning of uploaded content could happen through automated tools, including static code analysis and malware analisys (e.g., [Virustotal](https://cloud.google.com/chronicle/docs/soar/marketplace-integrations/virustotal)) to catch more sophisticated attacks.
+Scanning of uploaded content could happen through automated tools, including static code analysis and malware analysis (e.g., [Virustotal](https://cloud.google.com/chronicle/docs/soar/marketplace-integrations/virustotal)) to catch more sophisticated attacks.
